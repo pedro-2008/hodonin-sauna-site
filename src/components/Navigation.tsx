@@ -7,19 +7,14 @@ export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsMobileMenuOpen(false);
   };
 
   const navItems = [
@@ -30,27 +25,17 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "py-3 bg-white/90 backdrop-blur-xl shadow-lg" 
-          : "py-5 bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled ? "py-3 bg-white/95 backdrop-blur-xl shadow-lg" : "py-5 bg-transparent"
+    }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-2 group"
-          >
+          <button onClick={() => scrollToSection("hero")} className="flex items-center gap-2 group">
             <div className={`p-2 rounded-xl transition-all duration-300 ${
-              isScrolled 
-                ? "bg-wood-warm/10" 
-                : "bg-white/10 backdrop-blur-sm"
+              isScrolled ? "bg-luxury-gold/10" : "bg-white/10 backdrop-blur-sm"
             }`}>
               <Flame className={`w-5 h-5 transition-colors duration-300 ${
-                isScrolled ? "text-wood-warm" : "text-secondary"
+                isScrolled ? "text-luxury-gold-dark" : "text-luxury-gold-light"
               }`} />
             </div>
             <span className={`font-display text-xl font-medium transition-colors duration-300 ${
@@ -60,7 +45,6 @@ export const Navigation = () => {
             </span>
           </button>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <button
@@ -68,7 +52,7 @@ export const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                   isScrolled 
-                    ? "text-wood-dark hover:text-wood-warm hover:bg-wood-warm/10" 
+                    ? "text-wood-dark hover:text-luxury-gold-dark hover:bg-luxury-gold/10" 
                     : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -77,22 +61,21 @@ export const Navigation = () => {
             ))}
             <button
               onClick={() => scrollToSection("contact")}
-              className={`ml-2 px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
+              className={`ml-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
                 isScrolled 
-                  ? "bg-wood-warm text-white hover:bg-wood-warm/90 shadow-md hover:shadow-lg" 
-                  : "bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30"
+                  ? "bg-gradient-cta text-accent-foreground shadow-gold hover:shadow-lg" 
+                  : "bg-luxury-gold/90 text-accent-foreground hover:bg-luxury-gold"
               }`}
             >
               Kontakt
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
             className={`md:hidden rounded-full ${
-              isScrolled ? "text-wood-dark hover:bg-wood-warm/10" : "text-white hover:bg-white/10"
+              isScrolled ? "text-wood-dark hover:bg-luxury-gold/10" : "text-white hover:bg-white/10"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -100,7 +83,6 @@ export const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className={`md:hidden mt-4 pb-4 space-y-2 animate-fade-in ${
             isScrolled ? "" : "bg-black/20 backdrop-blur-xl rounded-2xl p-4 -mx-2"
@@ -111,7 +93,7 @@ export const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                   isScrolled 
-                    ? "text-wood-dark hover:text-wood-warm hover:bg-wood-warm/10" 
+                    ? "text-wood-dark hover:text-luxury-gold-dark hover:bg-luxury-gold/10" 
                     : "text-white hover:bg-white/10"
                 }`}
               >

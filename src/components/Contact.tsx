@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Sparkles, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
@@ -25,8 +25,8 @@ export const Contact = () => {
   return (
     <section id="contact" ref={ref} className="py-32 px-6 relative overflow-hidden bg-gradient-contact">
       {/* Decorative Elements */}
-      <GlowingOrb color="light" size="lg" className="top-20 -right-40 opacity-20" />
-      <GlowingOrb color="warm" size="md" className="bottom-20 -left-20 opacity-15" />
+      <GlowingOrb color="light" size="lg" className="top-20 -right-40 opacity-15" />
+      <GlowingOrb color="warm" size="md" className="bottom-20 -left-20 opacity-10" />
       
       {/* Decorative Pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{
@@ -36,14 +36,14 @@ export const Contact = () => {
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-secondary/10 border border-secondary/20">
-            <Phone className="w-4 h-4 text-secondary" />
-            <span className="text-sm font-medium tracking-wider uppercase text-secondary">Kontakt</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-luxury-gold/10 border border-luxury-gold/30">
+            <span className="w-2 h-2 rounded-full bg-luxury-gold" />
+            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold">Kontakt</span>
           </div>
-          <h2 className="font-display text-5xl md:text-6xl font-medium mb-4" style={{ color: 'hsl(var(--contact-heading))' }}>
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-4" style={{ color: 'hsl(var(--contact-heading))' }}>
             Kontakt a rezervace
           </h2>
-          <p className="text-xl" style={{ color: 'hsl(var(--contact-main-text))' }}>
+          <p className="text-xl font-light" style={{ color: 'hsl(var(--contact-main-text))' }}>
             Těšíme se na vaši návštěvu
           </p>
         </div>
@@ -51,13 +51,13 @@ export const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Opening Hours Card */}
           <Card 
-            className={`glass-card hover-lift rounded-3xl overflow-hidden border-0 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`luxury-card overflow-hidden border-0 transition-all duration-1000 hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))' }}
           >
             <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-br from-wood-warm/20 to-secondary/10 rounded-xl">
-                  <Calendar className="w-6 h-6 text-wood-warm" />
+              <div className="flex items-center gap-4">
+                <div className="icon-hand-drawn">
+                  <Calendar className="w-8 h-8 text-luxury-gold-dark" />
                 </div>
                 <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
                   Otevírací doba – listopad 2025
@@ -69,19 +69,19 @@ export const Contact = () => {
                 {schedule.map((item, index) => (
                   <div 
                     key={index}
-                    className={`flex items-center justify-between p-3 rounded-xl transition-colors duration-300 ${
+                    className={`flex items-center justify-between p-3 rounded-xl transition-all duration-300 ${
                       item.time === "Zavřeno" 
                         ? "bg-red-500/5" 
-                        : "bg-wood-light/10 hover:bg-wood-light/20"
+                        : "bg-muted/30 hover:bg-muted/50"
                     }`}
                   >
                     <span className="font-medium" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.day}</span>
                     <div className="flex items-center gap-3">
-                      <span className={`font-semibold ${item.time === "Zavřeno" ? "text-red-400/80" : ""}`} style={{ color: item.time === "Zavřeno" ? undefined : 'hsl(var(--contact-card-text))' }}>
+                      <span className={`font-semibold ${item.time === "Zavřeno" ? "text-red-400/80" : "text-luxury-gold-dark"}`}>
                         {item.time}
                       </span>
                       {item.type && (
-                        <span className="text-xs px-2 py-1 rounded-full bg-wood-warm/10 text-wood-warm">
+                        <span className="text-xs px-3 py-1 rounded-full bg-luxury-gold/10 text-luxury-gold-dark font-medium">
                           {item.type}
                         </span>
                       )}
@@ -94,13 +94,13 @@ export const Contact = () => {
 
           {/* Contact Info Card */}
           <Card 
-            className={`glass-card hover-lift rounded-3xl overflow-hidden border-0 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            className={`luxury-card overflow-hidden border-0 transition-all duration-1000 hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))', transitionDelay: '150ms' }}
           >
             <CardHeader className="pb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-br from-wood-warm/20 to-secondary/10 rounded-xl">
-                  <MapPin className="w-6 h-6 text-wood-warm" />
+              <div className="flex items-center gap-4">
+                <div className="icon-hand-drawn">
+                  <MapPin className="w-8 h-8 text-luxury-gold-dark" />
                 </div>
                 <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
                   Kde nás najdete
@@ -111,14 +111,14 @@ export const Contact = () => {
               {contactInfo.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-wood-light/10 hover:bg-wood-light/20 transition-colors duration-300"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
                 >
-                  <div className="p-2 bg-wood-warm/10 rounded-lg">
-                    <item.icon className="w-5 h-5 text-wood-warm" />
+                  <div className="p-3 bg-luxury-gold/10 rounded-xl group-hover:scale-110 transition-transform">
+                    <item.icon className="w-5 h-5 text-luxury-gold-dark" />
                   </div>
                   <div>
-                    <p className="text-sm mb-1" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.label}</p>
-                    <p className="font-semibold text-lg" style={{ color: 'hsl(var(--contact-card-accent))' }}>{item.value}</p>
+                    <p className="text-sm mb-1 font-light" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.label}</p>
+                    <p className="font-semibold text-lg text-luxury-gold-dark">{item.value}</p>
                   </div>
                 </div>
               ))}
@@ -132,13 +132,13 @@ export const Contact = () => {
           style={{ transitionDelay: '300ms' }}
         >
           <Card 
-            className="glass-card rounded-3xl overflow-hidden border-0"
+            className="luxury-card overflow-hidden border-0"
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))' }}
           >
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-gradient-to-br from-wood-warm/20 to-secondary/10 rounded-xl">
-                  <MapPin className="w-6 h-6 text-wood-warm" />
+              <div className="flex items-center gap-4">
+                <div className="icon-hand-drawn">
+                  <MapPin className="w-8 h-8 text-luxury-gold-dark" />
                 </div>
                 <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
                   Mapa
