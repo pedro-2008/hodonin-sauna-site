@@ -4,121 +4,127 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
-Updated: Nová teplá dřevěná barevná paleta
+Updated: Luxusní wellness paleta s akcentní barvou
 */
 
 @layer base {
   :root {
-    --background: 30 33% 96%;
-    --foreground: 28 58% 19%;
+    --background: 35 30% 97%;
+    --foreground: 25 35% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 28 58% 19%;
+    --card-foreground: 25 35% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 28 58% 19%;
+    --popover-foreground: 25 35% 18%;
 
-    --primary: 27 47% 37%;
+    --primary: 25 45% 32%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 39 52% 77%;
-    --secondary-foreground: 28 58% 19%;
+    /* Luxusní akcentní barva - tlumená zlatá */
+    --secondary: 38 65% 55%;
+    --secondary-foreground: 25 45% 15%;
 
-    --muted: 39 52% 85%;
-    --muted-foreground: 28 40% 40%;
+    --muted: 35 25% 90%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 105 9% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Akcentní barva pro CTA - olivově zelená s luxusním nádechem */
+    --accent: 45 55% 48%;
+    --accent-foreground: 25 45% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 39 52% 85%;
-    --input: 39 52% 85%;
-    --ring: 27 47% 37%;
+    --border: 35 30% 85%;
+    --input: 35 30% 85%;
+    --ring: 45 55% 48%;
 
     /* Sauna Design Tokens */
-    --wood-warm: 27 47% 37%;
-    --wood-light: 39 52% 77%;
-    --wood-dark: 28 58% 19%;
-    --cream: 30 33% 96%;
-    --eco-green: 105 9% 50%;
+    --wood-warm: 25 45% 32%;
+    --wood-light: 38 45% 75%;
+    --wood-dark: 25 35% 18%;
+    --cream: 35 30% 97%;
+    --eco-green: 85 25% 42%;
+    
+    /* Luxusní akcentní barva */
+    --luxury-gold: 45 55% 48%;
+    --luxury-gold-light: 45 60% 65%;
+    --luxury-gold-dark: 45 50% 38%;
     
     /* Hero Text Colors */
     --hero-heading: 0 0% 100%;
-    --hero-main-text: 30 33% 96%;
-    --hero-accent-text: 40 52% 77%;
+    --hero-main-text: 35 30% 95%;
+    --hero-accent-text: 45 60% 75%;
     
     /* About Text Colors */
-    --about-heading: 28 58% 19%;
-    --about-main-text: 27 58% 15%;
-    --about-accent-text: 31 36% 35%;
+    --about-heading: 25 35% 18%;
+    --about-main-text: 25 30% 25%;
+    --about-accent-text: 25 25% 40%;
     
     /* Services Text Colors */
-    --services-heading: 28 58% 19%;
-    --services-main-text: 27 35% 17%;
-    --services-accent-text: 28 52% 27%;
+    --services-heading: 25 35% 18%;
+    --services-main-text: 25 25% 28%;
+    --services-accent-text: 25 30% 35%;
     
     /* Pricing Text Colors */
-    --pricing-heading: 27 58% 15%;
-    --pricing-main-text: 28 58% 19%;
-    --pricing-accent-text: 31 36% 35%;
+    --pricing-heading: 25 35% 15%;
+    --pricing-main-text: 25 30% 22%;
+    --pricing-accent-text: 25 25% 38%;
     
     /* Contact Text Colors */
-    --contact-bg: 28 58% 19%;
-    --contact-heading: 39 52% 77%;
-    --contact-main-text: 30 33% 96%;
-    --contact-secondary-text: 34 37% 76%;
-    --contact-accent: 39 78% 77%;
-    --contact-icon: 27 34% 34%;
+    --contact-bg: 25 35% 18%;
+    --contact-heading: 45 55% 70%;
+    --contact-main-text: 35 30% 95%;
+    --contact-secondary-text: 35 25% 80%;
+    --contact-accent: 45 60% 58%;
+    --contact-icon: 25 30% 35%;
     
     /* Contact Card/Box Colors */
-    --contact-card-bg: 30 33% 94%;
-    --contact-card-text: 27 58% 15%;
-    --contact-card-heading: 28 58% 19%;
-    --contact-card-secondary: 31 25% 44%;
-    --contact-card-accent: 36 49% 47%;
-    --contact-card-border: 34 37% 76%;
+    --contact-card-bg: 35 28% 95%;
+    --contact-card-text: 25 35% 18%;
+    --contact-card-heading: 25 35% 20%;
+    --contact-card-secondary: 25 20% 45%;
+    --contact-card-accent: 45 55% 45%;
+    --contact-card-border: 35 25% 80%;
     
     /* Navigation Colors */
-    --nav-bg: 30 100% 97%; /* #FFF7EF */
-    --nav-text: 28 51% 24%; /* #5C3B1E */
-    --nav-hover: 30 35% 49%; /* #A67C52 */
-    --nav-button-bg: 28 51% 24%; /* #5C3B1E */
-    --nav-button-text: 30 100% 97%; /* #FFF7EF */
-    --nav-button-hover: 30 42% 39%; /* #8C6239 */
+    --nav-bg: 35 35% 98%;
+    --nav-text: 25 40% 22%;
+    --nav-hover: 45 55% 45%;
+    --nav-button-bg: 45 55% 48%;
+    --nav-button-text: 25 45% 12%;
+    --nav-button-hover: 45 50% 42%;
     
     /* Gradients - sekce */
-    --gradient-hero: linear-gradient(to top, hsl(27 70% 22%), hsl(27 53% 27%));
-    --gradient-about: linear-gradient(to bottom, hsl(30 33% 96%), hsl(35 45% 91%));
-    --gradient-services: linear-gradient(to bottom, hsl(35 37% 75%), hsl(35 37% 75%));
-    --gradient-pricing: linear-gradient(to bottom, hsl(0 0% 100%), hsl(30 33% 96%));
-    --gradient-contact: linear-gradient(to bottom, hsl(28 58% 19%), hsl(28 58% 16%));
+    --gradient-hero: linear-gradient(to top, hsl(25 55% 18%), hsl(25 45% 25%));
+    --gradient-about: linear-gradient(180deg, hsl(35 30% 97%) 0%, hsl(38 35% 94%) 100%);
+    --gradient-services: linear-gradient(180deg, hsl(38 30% 96%) 0%, hsl(35 28% 93%) 100%);
+    --gradient-pricing: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(38 35% 97%) 100%);
+    --gradient-contact: linear-gradient(180deg, hsl(25 35% 18%) 0%, hsl(25 40% 14%) 100%);
+    
+    /* Luxusní gradient pro CTA */
+    --gradient-cta: linear-gradient(135deg, hsl(45 55% 48%) 0%, hsl(38 60% 55%) 100%);
+    --gradient-gift: linear-gradient(135deg, hsl(45 55% 50%) 0%, hsl(35 50% 45%) 100%);
     
     /* Oddělovací linky */
     --divider-light: hsl(45 40% 75% / 0.4);
-    --divider-dark: hsl(30 35% 36% / 0.4);
+    --divider-dark: hsl(25 35% 36% / 0.4);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(28 58% 19% / 0.08);
-    --shadow-warm: 0 8px 30px hsl(27 47% 37% / 0.15);
+    --shadow-soft: 0 4px 20px hsl(25 35% 18% / 0.08);
+    --shadow-warm: 0 8px 30px hsl(25 45% 32% / 0.15);
+    --shadow-gold: 0 8px 30px hsl(45 55% 48% / 0.25);
+    --shadow-lift: 0 20px 40px hsl(25 35% 18% / 0.12), 0 8px 16px hsl(25 35% 18% / 0.08);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -168,48 +174,100 @@ Updated: Nová teplá dřevěná barevná paleta
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Smooth scrolling for the whole page */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Premium glass effect */
+  /* Premium glass effect - vzdušnější */
   .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+    @apply bg-white/80 backdrop-blur-xl border border-white/30;
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      0 4px 24px rgba(0, 0, 0, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Luxury card with golden accent */
+  .luxury-card {
+    @apply bg-white/90 backdrop-blur-xl rounded-3xl;
+    border: 1px solid hsl(45 40% 85% / 0.5);
+    box-shadow: 
+      0 4px 32px hsl(45 55% 48% / 0.08),
+      0 1px 2px rgba(0, 0, 0, 0.02),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
   
   /* Elegant text gradient */
   .text-gradient-warm {
-    background: linear-gradient(135deg, hsl(var(--wood-warm)) 0%, hsl(var(--secondary)) 100%);
+    background: linear-gradient(135deg, hsl(var(--wood-warm)) 0%, hsl(var(--luxury-gold)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  /* Gold accent text */
+  .text-gold {
+    color: hsl(var(--luxury-gold));
   }
   
   /* Shimmer effect for premium elements */
   .shimmer {
     background: linear-gradient(
       90deg,
-      hsl(var(--secondary) / 0.1) 0%,
-      hsl(var(--secondary) / 0.3) 50%,
-      hsl(var(--secondary) / 0.1) 100%
+      hsl(var(--luxury-gold) / 0.1) 0%,
+      hsl(var(--luxury-gold) / 0.3) 50%,
+      hsl(var(--luxury-gold) / 0.1) 100%
     );
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
   }
   
-  /* Premium hover card effect */
+  /* Premium hover card effect - jemnější */
   .hover-lift {
-    @apply transition-all duration-500;
+    @apply transition-all duration-500 ease-out;
   }
   
   .hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 
-      0 20px 40px rgba(0, 0, 0, 0.1),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+  }
+  
+  /* Golden glow effect */
+  .glow-gold {
+    box-shadow: 0 0 40px hsl(45 55% 48% / 0.3);
+  }
+  
+  /* CTA Button - luxusní zlatý */
+  .btn-cta {
+    @apply px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300;
+    background: var(--gradient-cta);
+    color: hsl(var(--accent-foreground));
+    box-shadow: 0 4px 20px hsl(45 55% 48% / 0.35);
+  }
+  
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px hsl(45 55% 48% / 0.45);
+  }
+  
+  /* Secondary button - elegantní outline */
+  .btn-outline-elegant {
+    @apply px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300;
+    background: transparent;
+    border: 2px solid hsl(0 0% 100% / 0.3);
+    color: hsl(0 0% 100%);
+  }
+  
+  .btn-outline-elegant:hover {
+    background: hsl(0 0% 100% / 0.1);
+    border-color: hsl(0 0% 100% / 0.5);
+    transform: translateY(-2px);
   }
   
   /* Decorative corner ornament */
@@ -221,9 +279,9 @@ Updated: Nová teplá dřevěná barevná paleta
   .corner-ornament::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-color: hsl(var(--wood-warm) / 0.3);
+    width: 24px;
+    height: 24px;
+    border-color: hsl(var(--luxury-gold) / 0.4);
     border-style: solid;
   }
   
@@ -231,12 +289,14 @@ Updated: Nová teplá dřevěná barevná paleta
     top: -1px;
     left: -1px;
     border-width: 2px 0 0 2px;
+    border-radius: 4px 0 0 0;
   }
   
   .corner-ornament::after {
     bottom: -1px;
     right: -1px;
     border-width: 0 2px 2px 0;
+    border-radius: 0 0 4px 0;
   }
   
   /* Elegant underline animation */
@@ -247,12 +307,96 @@ Updated: Nová teplá dřevěná barevná paleta
   .elegant-underline::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, hsl(var(--wood-warm)), transparent);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, hsl(var(--luxury-gold)), transparent);
+    border-radius: 2px;
+  }
+  
+  /* Service card - vzdušnější design */
+  .service-card {
+    @apply bg-white/95 rounded-3xl p-6 transition-all duration-500;
+    border: 1px solid hsl(35 30% 90%);
+    box-shadow: 0 2px 12px hsl(25 35% 18% / 0.04);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px hsl(25 35% 18% / 0.1);
+    border-color: hsl(45 55% 75% / 0.5);
+  }
+  
+  /* Price highlight with accent */
+  .price-highlight {
+    color: hsl(var(--luxury-gold-dark));
+    font-weight: 700;
+  }
+  
+  /* Gift voucher luxury block */
+  .gift-voucher {
+    background: linear-gradient(135deg, hsl(45 55% 50% / 0.1) 0%, hsl(38 50% 55% / 0.05) 100%);
+    border: 2px solid hsl(45 55% 65% / 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gift-voucher::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-cta);
+  }
+  
+  /* Scroll reveal animation classes */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Icon container with hand-drawn style */
+  .icon-hand-drawn {
+    @apply p-4 rounded-2xl transition-all duration-300;
+    background: linear-gradient(135deg, hsl(45 55% 95%) 0%, hsl(38 40% 92%) 100%);
+    border: 1px solid hsl(45 40% 85% / 0.5);
+  }
+  
+  .icon-hand-drawn:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 4px 16px hsl(45 55% 48% / 0.2);
   }
 }
 
@@ -262,5 +406,23 @@ Updated: Nová teplá dřevěná barevná paleta
   }
   100% {
     background-position: 200% 0;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(45 55% 48% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(45 55% 48% / 0.5);
   }
 }

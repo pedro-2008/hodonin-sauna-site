@@ -62,6 +62,12 @@ export default {
 				eco: {
 					green: 'hsl(var(--eco-green))'
 				},
+				// Luxusní akcentní barvy
+				luxury: {
+					gold: 'hsl(var(--luxury-gold))',
+					'gold-light': 'hsl(var(--luxury-gold-light))',
+					'gold-dark': 'hsl(var(--luxury-gold-dark))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
