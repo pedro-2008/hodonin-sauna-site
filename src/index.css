@@ -170,3 +170,97 @@ Updated: Nová teplá dřevěná barevná paleta
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Premium glass effect */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Elegant text gradient */
+  .text-gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--wood-warm)) 0%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Shimmer effect for premium elements */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--secondary) / 0.1) 0%,
+      hsl(var(--secondary) / 0.3) 50%,
+      hsl(var(--secondary) / 0.1) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  
+  /* Premium hover card effect */
+  .hover-lift {
+    @apply transition-all duration-500;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Decorative corner ornament */
+  .corner-ornament {
+    position: relative;
+  }
+  
+  .corner-ornament::before,
+  .corner-ornament::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: hsl(var(--wood-warm) / 0.3);
+    border-style: solid;
+  }
+  
+  .corner-ornament::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+  
+  .corner-ornament::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+  
+  /* Elegant underline animation */
+  .elegant-underline {
+    position: relative;
+  }
+  
+  .elegant-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--wood-warm)), transparent);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

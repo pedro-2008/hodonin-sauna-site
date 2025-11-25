@@ -92,6 +92,7 @@ export default {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
 				playfair: ['Playfair Display', 'serif'],
+				display: ['Cormorant Garamond', 'Georgia', 'serif'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -199,6 +200,33 @@ export default {
 						transform: 'translateY(-100vh) scale(1.3)',
 						opacity: '0'
 					}
+				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0'
+					},
+					'100%': {
+						backgroundPosition: '200% 0'
+					}
+				},
+				'glow-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(27 47% 37% / 0.3), 0 0 40px hsl(27 47% 37% / 0.1)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px hsl(27 47% 37% / 0.5), 0 0 60px hsl(27 47% 37% / 0.2)'
+					}
+				},
+				'text-shimmer': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					},
+					'100%': {
+						backgroundPosition: '0% 50%'
+					}
 				}
 			},
 			animation: {
@@ -212,7 +240,10 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'spin-slow': 'spin-slow 8s linear infinite',
-				'steam-rise': 'steam-rise 15s ease-out infinite'
+				'steam-rise': 'steam-rise 15s ease-out infinite',
+				'shimmer': 'shimmer 3s linear infinite',
+				'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
+				'text-shimmer': 'text-shimmer 3s ease-in-out infinite'
 			}
 		}
 	},

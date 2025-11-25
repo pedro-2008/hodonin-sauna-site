@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Navigation = () => {
@@ -27,60 +27,61 @@ export const Navigation = () => {
     { label: "O nás", id: "about" },
     { label: "Služby", id: "services" },
     { label: "Ceník", id: "pricing" },
-    { label: "Kontakt", id: "contact" },
   ];
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50" 
-      style={{ 
-        backgroundColor: 'hsl(var(--nav-bg))',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
-      }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? "py-3 bg-white/90 backdrop-blur-xl shadow-lg" 
+          : "py-5 bg-transparent"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-2xl font-light transition-[color]"
-            style={{ 
-              color: 'hsl(var(--nav-text))',
-              transitionDuration: '0.2s',
-              transitionTimingFunction: 'ease'
-            }}
+            className="flex items-center gap-2 group"
           >
-            Sauna Na Teze
+            <div className={`p-2 rounded-xl transition-all duration-300 ${
+              isScrolled 
+                ? "bg-wood-warm/10" 
+                : "bg-white/10 backdrop-blur-sm"
+            }`}>
+              <Flame className={`w-5 h-5 transition-colors duration-300 ${
+                isScrolled ? "text-wood-warm" : "text-secondary"
+              }`} />
+            </div>
+            <span className={`font-display text-xl font-medium transition-colors duration-300 ${
+              isScrolled ? "text-wood-dark" : "text-white"
+            }`}>
+              Sauna Na Teze
+            </span>
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.slice(0, -1).map((item) => (
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="font-medium transition-[color]"
-                style={{ 
-                  color: 'hsl(var(--nav-text))',
-                  transitionDuration: '0.2s',
-                  transitionTimingFunction: 'ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--nav-hover))'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'hsl(var(--nav-text))'}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  isScrolled 
+                    ? "text-wood-dark hover:text-wood-warm hover:bg-wood-warm/10" 
+                    : "text-white/90 hover:text-white hover:bg-white/10"
+                }`}
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => scrollToSection("contact")}
-              className="font-medium px-6 py-2 rounded-md transition-[background-color]"
-              style={{ 
-                backgroundColor: 'hsl(var(--nav-button-bg))',
-                color: 'hsl(var(--nav-button-text))',
-                transitionDuration: '0.2s',
-                transitionTimingFunction: 'ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--nav-button-hover))'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'hsl(var(--nav-button-bg))'}
+              className={`ml-2 px-6 py-2.5 rounded-full font-medium transition-all duration-300 ${
+                isScrolled 
+                  ? "bg-wood-warm text-white hover:bg-wood-warm/90 shadow-md hover:shadow-lg" 
+                  : "bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30"
+              }`}
             >
               Kontakt
             </button>
@@ -90,9 +91,10 @@ export const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden rounded-full ${
+              isScrolled ? "text-wood-dark hover:bg-wood-warm/10" : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            style={{ color: 'hsl(var(--nav-text))' }}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </Button>
@@ -100,19 +102,18 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
-            {navItems.map((item) => (
+          <div className={`md:hidden mt-4 pb-4 space-y-2 animate-fade-in ${
+            isScrolled ? "" : "bg-black/20 backdrop-blur-xl rounded-2xl p-4 -mx-2"
+          }`}>
+            {[...navItems, { label: "Kontakt", id: "contact" }].map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-2 font-medium transition-[color]"
-                style={{ 
-                  color: 'hsl(var(--nav-text))',
-                  transitionDuration: '0.2s',
-                  transitionTimingFunction: 'ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--nav-hover))'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'hsl(var(--nav-text))'}
+                className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                  isScrolled 
+                    ? "text-wood-dark hover:text-wood-warm hover:bg-wood-warm/10" 
+                    : "text-white hover:bg-white/10"
+                }`}
               >
                 {item.label}
               </button>
