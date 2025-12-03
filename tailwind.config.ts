@@ -52,21 +52,32 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Sauna Design Tokens
+			// Finská sauna - dřevěné tóny
 				wood: {
 					warm: 'hsl(var(--wood-warm))',
 					light: 'hsl(var(--wood-light))',
-					dark: 'hsl(var(--wood-dark))'
+					dark: 'hsl(var(--wood-dark))',
+					honey: 'hsl(var(--wood-honey))'
 				},
 				cream: 'hsl(var(--cream))',
-				eco: {
-					green: 'hsl(var(--eco-green))'
+				stone: {
+					DEFAULT: 'hsl(var(--stone))',
+					light: 'hsl(var(--stone-light))'
 				},
-				// Luxusní akcentní barvy
+				// Jantarová akcentní paleta
+				amber: {
+					DEFAULT: 'hsl(var(--amber))',
+					light: 'hsl(var(--amber-light))',
+					dark: 'hsl(var(--amber-dark))'
+				},
+				ember: {
+					glow: 'hsl(var(--ember-glow))'
+				},
+				// Legacy alias pro kompatibilitu
 				luxury: {
-					gold: 'hsl(var(--luxury-gold))',
-					'gold-light': 'hsl(var(--luxury-gold-light))',
-					'gold-dark': 'hsl(var(--luxury-gold-dark))'
+					gold: 'hsl(var(--amber))',
+					'gold-light': 'hsl(var(--amber-light))',
+					'gold-dark': 'hsl(var(--amber-dark))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -175,14 +186,14 @@ export default {
 						transform: 'translateY(-10px)'
 					}
 				},
-				'pulse-glow': {
+			'pulse-glow': {
 					'0%, 100%': {
 						opacity: '1',
-						boxShadow: '0 0 20px rgba(212, 175, 55, 0.4)'
+						boxShadow: '0 0 20px hsl(25 75% 50% / 0.4)'
 					},
 					'50%': {
 						opacity: '0.8',
-						boxShadow: '0 0 30px rgba(212, 175, 55, 0.6)'
+						boxShadow: '0 0 30px hsl(25 75% 50% / 0.6)'
 					}
 				},
 				'spin-slow': {
@@ -215,12 +226,12 @@ export default {
 						backgroundPosition: '200% 0'
 					}
 				},
-				'glow-pulse': {
+			'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px hsl(27 47% 37% / 0.3), 0 0 40px hsl(27 47% 37% / 0.1)'
+						boxShadow: '0 0 20px hsl(25 75% 50% / 0.3), 0 0 40px hsl(25 75% 50% / 0.1)'
 					},
 					'50%': {
-						boxShadow: '0 0 30px hsl(27 47% 37% / 0.5), 0 0 60px hsl(27 47% 37% / 0.2)'
+						boxShadow: '0 0 30px hsl(25 75% 50% / 0.5), 0 0 60px hsl(25 75% 50% / 0.2)'
 					}
 				},
 				'text-shimmer': {
