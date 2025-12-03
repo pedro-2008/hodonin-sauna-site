@@ -9,123 +9,128 @@ Updated: Luxusní wellness paleta s akcentní barvou
 
 @layer base {
   :root {
-    --background: 35 30% 97%;
-    --foreground: 25 35% 18%;
+    /* Finská sauna - rustikální tmavší styl s jantarovou akcentací */
+    --background: 30 25% 94%;
+    --foreground: 20 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 25 35% 18%;
+    --card: 35 20% 98%;
+    --card-foreground: 20 40% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 35% 18%;
+    --popover: 35 20% 98%;
+    --popover-foreground: 20 40% 15%;
 
-    --primary: 25 45% 32%;
-    --primary-foreground: 0 0% 100%;
+    /* Primární - tmavé medové dřevo */
+    --primary: 22 50% 28%;
+    --primary-foreground: 35 25% 95%;
 
-    /* Luxusní akcentní barva - tlumená zlatá */
-    --secondary: 38 65% 55%;
-    --secondary-foreground: 25 45% 15%;
+    /* Sekundární - střední med */
+    --secondary: 32 45% 65%;
+    --secondary-foreground: 20 45% 15%;
 
-    --muted: 35 25% 90%;
-    --muted-foreground: 25 20% 45%;
+    --muted: 30 20% 88%;
+    --muted-foreground: 20 25% 40%;
 
-    /* Akcentní barva pro CTA - olivově zelená s luxusním nádechem */
-    --accent: 45 55% 48%;
-    --accent-foreground: 25 45% 12%;
+    /* Akcentní barva - teplá jantarová (žhavé uhlíky) */
+    --accent: 25 75% 50%;
+    --accent-foreground: 20 50% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 30% 85%;
-    --input: 35 30% 85%;
-    --ring: 45 55% 48%;
+    --border: 30 25% 82%;
+    --input: 30 25% 82%;
+    --ring: 25 75% 50%;
 
-    /* Sauna Design Tokens */
-    --wood-warm: 25 45% 32%;
-    --wood-light: 38 45% 75%;
-    --wood-dark: 25 35% 18%;
-    --cream: 35 30% 97%;
-    --eco-green: 85 25% 42%;
+    /* Finská sauna - dřevěné tóny */
+    --wood-warm: 22 50% 28%;
+    --wood-light: 35 40% 70%;
+    --wood-dark: 18 45% 18%;
+    --wood-honey: 28 55% 45%;
+    --cream: 30 25% 94%;
+    --stone: 25 8% 35%;
+    --stone-light: 25 5% 60%;
     
-    /* Luxusní akcentní barva */
-    --luxury-gold: 45 55% 48%;
-    --luxury-gold-light: 45 60% 65%;
-    --luxury-gold-dark: 45 50% 38%;
+    /* Jantarová akcentní paleta */
+    --amber: 25 75% 50%;
+    --amber-light: 30 70% 65%;
+    --amber-dark: 20 80% 38%;
+    --ember-glow: 18 85% 45%;
     
     /* Hero Text Colors */
-    --hero-heading: 0 0% 100%;
-    --hero-main-text: 35 30% 95%;
-    --hero-accent-text: 45 60% 75%;
+    --hero-heading: 35 25% 98%;
+    --hero-main-text: 35 20% 92%;
+    --hero-accent-text: 30 70% 70%;
     
     /* About Text Colors */
-    --about-heading: 25 35% 18%;
-    --about-main-text: 25 30% 25%;
-    --about-accent-text: 25 25% 40%;
+    --about-heading: 20 40% 15%;
+    --about-main-text: 20 35% 22%;
+    --about-accent-text: 20 30% 35%;
     
     /* Services Text Colors */
-    --services-heading: 25 35% 18%;
-    --services-main-text: 25 25% 28%;
-    --services-accent-text: 25 30% 35%;
+    --services-heading: 20 40% 15%;
+    --services-main-text: 20 30% 25%;
+    --services-accent-text: 20 25% 38%;
     
     /* Pricing Text Colors */
-    --pricing-heading: 25 35% 15%;
-    --pricing-main-text: 25 30% 22%;
-    --pricing-accent-text: 25 25% 38%;
+    --pricing-heading: 20 45% 12%;
+    --pricing-main-text: 20 35% 20%;
+    --pricing-accent-text: 20 28% 35%;
     
     /* Contact Text Colors */
-    --contact-bg: 25 35% 18%;
-    --contact-heading: 45 55% 70%;
-    --contact-main-text: 35 30% 95%;
-    --contact-secondary-text: 35 25% 80%;
-    --contact-accent: 45 60% 58%;
-    --contact-icon: 25 30% 35%;
+    --contact-bg: 18 45% 14%;
+    --contact-heading: 30 70% 68%;
+    --contact-main-text: 35 20% 92%;
+    --contact-secondary-text: 32 18% 78%;
+    --contact-accent: 25 75% 55%;
+    --contact-icon: 22 35% 32%;
     
     /* Contact Card/Box Colors */
-    --contact-card-bg: 35 28% 95%;
-    --contact-card-text: 25 35% 18%;
-    --contact-card-heading: 25 35% 20%;
-    --contact-card-secondary: 25 20% 45%;
-    --contact-card-accent: 45 55% 45%;
-    --contact-card-border: 35 25% 80%;
+    --contact-card-bg: 32 22% 93%;
+    --contact-card-text: 20 40% 15%;
+    --contact-card-heading: 20 42% 18%;
+    --contact-card-secondary: 20 22% 42%;
+    --contact-card-accent: 25 70% 48%;
+    --contact-card-border: 30 20% 78%;
     
     /* Navigation Colors */
-    --nav-bg: 35 35% 98%;
-    --nav-text: 25 40% 22%;
-    --nav-hover: 45 55% 45%;
-    --nav-button-bg: 45 55% 48%;
-    --nav-button-text: 25 45% 12%;
-    --nav-button-hover: 45 50% 42%;
+    --nav-bg: 32 28% 96%;
+    --nav-text: 20 45% 18%;
+    --nav-hover: 25 70% 48%;
+    --nav-button-bg: 25 75% 50%;
+    --nav-button-text: 20 50% 10%;
+    --nav-button-hover: 22 78% 42%;
     
     /* Gradients - sekce */
-    --gradient-hero: linear-gradient(to top, hsl(25 55% 18%), hsl(25 45% 25%));
-    --gradient-about: linear-gradient(180deg, hsl(35 30% 97%) 0%, hsl(38 35% 94%) 100%);
-    --gradient-services: linear-gradient(180deg, hsl(38 30% 96%) 0%, hsl(35 28% 93%) 100%);
-    --gradient-pricing: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(38 35% 97%) 100%);
-    --gradient-contact: linear-gradient(180deg, hsl(25 35% 18%) 0%, hsl(25 40% 14%) 100%);
+    --gradient-hero: linear-gradient(to top, hsl(18 55% 12%), hsl(22 50% 22%));
+    --gradient-about: linear-gradient(180deg, hsl(30 25% 94%) 0%, hsl(32 28% 90%) 100%);
+    --gradient-services: linear-gradient(180deg, hsl(32 25% 92%) 0%, hsl(30 22% 89%) 100%);
+    --gradient-pricing: linear-gradient(180deg, hsl(35 20% 98%) 0%, hsl(32 28% 94%) 100%);
+    --gradient-contact: linear-gradient(180deg, hsl(18 45% 14%) 0%, hsl(15 50% 10%) 100%);
     
-    /* Luxusní gradient pro CTA */
-    --gradient-cta: linear-gradient(135deg, hsl(45 55% 48%) 0%, hsl(38 60% 55%) 100%);
-    --gradient-gift: linear-gradient(135deg, hsl(45 55% 50%) 0%, hsl(35 50% 45%) 100%);
+    /* Jantarový gradient pro CTA */
+    --gradient-cta: linear-gradient(135deg, hsl(25 75% 50%) 0%, hsl(30 70% 55%) 100%);
+    --gradient-gift: linear-gradient(135deg, hsl(28 70% 52%) 0%, hsl(22 65% 45%) 100%);
     
     /* Oddělovací linky */
-    --divider-light: hsl(45 40% 75% / 0.4);
-    --divider-dark: hsl(25 35% 36% / 0.4);
+    --divider-light: hsl(30 50% 70% / 0.4);
+    --divider-dark: hsl(20 40% 30% / 0.4);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(25 35% 18% / 0.08);
-    --shadow-warm: 0 8px 30px hsl(25 45% 32% / 0.15);
-    --shadow-gold: 0 8px 30px hsl(45 55% 48% / 0.25);
-    --shadow-lift: 0 20px 40px hsl(25 35% 18% / 0.12), 0 8px 16px hsl(25 35% 18% / 0.08);
+    --shadow-soft: 0 4px 20px hsl(20 40% 15% / 0.08);
+    --shadow-warm: 0 8px 30px hsl(22 50% 28% / 0.15);
+    --shadow-amber: 0 8px 30px hsl(25 75% 50% / 0.25);
+    --shadow-lift: 0 20px 40px hsl(20 40% 15% / 0.12), 0 8px 16px hsl(20 40% 15% / 0.08);
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 32 20% 96%;
+    --sidebar-foreground: 20 35% 25%;
+    --sidebar-primary: 22 50% 28%;
+    --sidebar-primary-foreground: 35 25% 95%;
+    --sidebar-accent: 30 25% 92%;
+    --sidebar-accent-foreground: 20 40% 15%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 25 75% 50%;
   }
 
   .dark {
@@ -193,42 +198,42 @@ Updated: Luxusní wellness paleta s akcentní barvou
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
   
-  /* Luxury card with golden accent */
+  /* Sauna card with amber accent */
   .luxury-card {
     @apply bg-white/90 backdrop-blur-xl rounded-3xl;
-    border: 1px solid hsl(45 40% 85% / 0.5);
+    border: 1px solid hsl(30 40% 80% / 0.5);
     box-shadow: 
-      0 4px 32px hsl(45 55% 48% / 0.08),
+      0 4px 32px hsl(25 75% 50% / 0.08),
       0 1px 2px rgba(0, 0, 0, 0.02),
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
   
-  /* Elegant text gradient */
+  /* Elegant text gradient - amber wood */
   .text-gradient-warm {
-    background: linear-gradient(135deg, hsl(var(--wood-warm)) 0%, hsl(var(--luxury-gold)) 100%);
+    background: linear-gradient(135deg, hsl(var(--wood-warm)) 0%, hsl(var(--amber)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
-  /* Gold accent text */
+  /* Amber accent text */
   .text-gold {
-    color: hsl(var(--luxury-gold));
+    color: hsl(var(--amber));
   }
   
-  /* Shimmer effect for premium elements */
+  /* Shimmer effect - amber glow */
   .shimmer {
     background: linear-gradient(
       90deg,
-      hsl(var(--luxury-gold) / 0.1) 0%,
-      hsl(var(--luxury-gold) / 0.3) 50%,
-      hsl(var(--luxury-gold) / 0.1) 100%
+      hsl(var(--amber) / 0.1) 0%,
+      hsl(var(--amber) / 0.3) 50%,
+      hsl(var(--amber) / 0.1) 100%
     );
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
   }
   
-  /* Premium hover card effect - jemnější */
+  /* Premium hover card effect */
   .hover-lift {
     @apply transition-all duration-500 ease-out;
   }
@@ -238,35 +243,35 @@ Updated: Luxusní wellness paleta s akcentní barvou
     box-shadow: var(--shadow-lift);
   }
   
-  /* Golden glow effect */
+  /* Amber glow effect */
   .glow-gold {
-    box-shadow: 0 0 40px hsl(45 55% 48% / 0.3);
+    box-shadow: 0 0 40px hsl(25 75% 50% / 0.3);
   }
   
-  /* CTA Button - luxusní zlatý */
+  /* CTA Button - teplá jantarová */
   .btn-cta {
     @apply px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300;
     background: var(--gradient-cta);
     color: hsl(var(--accent-foreground));
-    box-shadow: 0 4px 20px hsl(45 55% 48% / 0.35);
+    box-shadow: 0 4px 20px hsl(25 75% 50% / 0.35);
   }
   
   .btn-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px hsl(45 55% 48% / 0.45);
+    box-shadow: 0 8px 30px hsl(25 75% 50% / 0.45);
   }
   
   /* Secondary button - elegantní outline */
   .btn-outline-elegant {
     @apply px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300;
     background: transparent;
-    border: 2px solid hsl(0 0% 100% / 0.3);
-    color: hsl(0 0% 100%);
+    border: 2px solid hsl(35 25% 95% / 0.3);
+    color: hsl(35 25% 95%);
   }
   
   .btn-outline-elegant:hover {
-    background: hsl(0 0% 100% / 0.1);
-    border-color: hsl(0 0% 100% / 0.5);
+    background: hsl(35 25% 95% / 0.1);
+    border-color: hsl(35 25% 95% / 0.5);
     transform: translateY(-2px);
   }
   
@@ -281,7 +286,7 @@ Updated: Luxusní wellness paleta s akcentní barvou
     position: absolute;
     width: 24px;
     height: 24px;
-    border-color: hsl(var(--luxury-gold) / 0.4);
+    border-color: hsl(var(--amber) / 0.4);
     border-style: solid;
   }
   
@@ -312,33 +317,33 @@ Updated: Luxusní wellness paleta s akcentní barvou
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, hsl(var(--luxury-gold)), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--amber)), transparent);
     border-radius: 2px;
   }
   
-  /* Service card - vzdušnější design */
+  /* Service card - finská sauna design */
   .service-card {
     @apply bg-white/95 rounded-3xl p-6 transition-all duration-500;
-    border: 1px solid hsl(35 30% 90%);
-    box-shadow: 0 2px 12px hsl(25 35% 18% / 0.04);
+    border: 1px solid hsl(30 25% 88%);
+    box-shadow: 0 2px 12px hsl(20 40% 15% / 0.04);
   }
   
   .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px hsl(25 35% 18% / 0.1);
-    border-color: hsl(45 55% 75% / 0.5);
+    box-shadow: 0 16px 40px hsl(20 40% 15% / 0.1);
+    border-color: hsl(25 65% 70% / 0.5);
   }
   
   /* Price highlight with accent */
   .price-highlight {
-    color: hsl(var(--luxury-gold-dark));
+    color: hsl(var(--amber-dark));
     font-weight: 700;
   }
   
-  /* Gift voucher luxury block */
+  /* Gift voucher - amber warmth */
   .gift-voucher {
-    background: linear-gradient(135deg, hsl(45 55% 50% / 0.1) 0%, hsl(38 50% 55% / 0.05) 100%);
-    border: 2px solid hsl(45 55% 65% / 0.3);
+    background: linear-gradient(135deg, hsl(25 70% 50% / 0.1) 0%, hsl(30 60% 55% / 0.05) 100%);
+    border: 2px solid hsl(25 65% 60% / 0.3);
     position: relative;
     overflow: hidden;
   }
@@ -387,16 +392,16 @@ Updated: Luxusní wellness paleta s akcentní barvou
     transform: translateX(0);
   }
   
-  /* Icon container with hand-drawn style */
+  /* Icon container - sauna wood style */
   .icon-hand-drawn {
     @apply p-4 rounded-2xl transition-all duration-300;
-    background: linear-gradient(135deg, hsl(45 55% 95%) 0%, hsl(38 40% 92%) 100%);
-    border: 1px solid hsl(45 40% 85% / 0.5);
+    background: linear-gradient(135deg, hsl(30 35% 93%) 0%, hsl(28 30% 88%) 100%);
+    border: 1px solid hsl(28 35% 80% / 0.5);
   }
   
   .icon-hand-drawn:hover {
     transform: scale(1.1) rotate(3deg);
-    box-shadow: 0 4px 16px hsl(45 55% 48% / 0.2);
+    box-shadow: 0 4px 16px hsl(25 75% 50% / 0.2);
   }
 }
 
@@ -418,11 +423,11 @@ Updated: Luxusní wellness paleta s akcentní barvou
   }
 }
 
-@keyframes pulse-gold {
+@keyframes pulse-amber {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(45 55% 48% / 0.3);
+    box-shadow: 0 0 20px hsl(25 75% 50% / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(45 55% 48% / 0.5);
+    box-shadow: 0 0 40px hsl(25 75% 50% / 0.5);
   }
 }
