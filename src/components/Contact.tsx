@@ -2,7 +2,6 @@ import { MapPin, Phone, Mail, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
-import { WoodTexture } from "@/components/decorative/WoodTexture";
 
 export const Contact = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -29,8 +28,10 @@ export const Contact = () => {
       <GlowingOrb color="light" size="lg" className="top-20 -right-40 opacity-15" />
       <GlowingOrb color="warm" size="md" className="bottom-20 -left-20 opacity-10" />
       
-      {/* Wood Texture Overlay */}
-      <WoodTexture opacity={0.025} />
+      {/* Decorative Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v22H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
       
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
