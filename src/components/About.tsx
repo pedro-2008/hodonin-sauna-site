@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Thermometer, CheckCircle2 } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
 import { SaunaIcon, HotStonesIcon, RelaxIcon } from "@/components/decorative/HandDrawnIcons";
+import naseSaunaImage from "@/assets/nase-sauna.jpg";
 
 export const About = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -87,43 +88,55 @@ export const About = () => {
             </div>
           </div>
           
-          {/* Benefits Card */}
-          <Card 
-            className={`luxury-card overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} 
-            style={{ transitionDelay: '300ms' }}
-          >
-            <CardContent className="p-8 md:p-10">
-              <div className="flex items-center gap-4 mb-10">
-                <div className="p-3 bg-luxury-gold/10 rounded-xl">
-                  <CheckCircle2 className="w-7 h-7 text-luxury-gold-dark" />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl font-medium" style={{ color: 'hsl(var(--about-heading))' }}>
-                  Proč finská sauna?
-                </h3>
+          {/* Sauna Image & Benefits */}
+          <div className={`space-y-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '300ms' }}>
+            {/* Featured Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-elegant group">
+              <img 
+                src={naseSaunaImage} 
+                alt="Naše finská sauna - interiér s dřevěnými lavicemi" 
+                className="w-full h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-wood-dark">
+                  <span className="w-2 h-2 rounded-full bg-amber-500" />
+                  Naše sauna
+                </span>
               </div>
-              
-              <ul className="space-y-5">
-                {benefits.map((benefit, index) => (
-                  <li 
-                    key={index} 
-                    className={`flex items-start gap-4 p-4 rounded-xl transition-all duration-500 hover:bg-muted/30 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                    }`}
-                    style={{ transitionDelay: `${400 + index * 100}ms` }}
-                  >
-                    <div className="p-2 bg-eco-green/10 rounded-full mt-0.5 flex-shrink-0">
-                      <benefit.icon className="w-4 h-4 text-eco-green" />
-                    </div>
-                    <span className="text-lg font-light" style={{ color: 'hsl(var(--about-main-text))' }}>{benefit.text}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Decorative Corners */}
-              <div className="absolute top-4 right-4 w-16 h-16 border-t-2 border-r-2 border-luxury-gold/20 rounded-tr-2xl" />
-              <div className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-luxury-gold/20 rounded-bl-2xl" />
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Benefits Card */}
+            <Card className="luxury-card overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2.5 bg-luxury-gold/10 rounded-xl">
+                    <CheckCircle2 className="w-6 h-6 text-luxury-gold-dark" />
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl font-medium" style={{ color: 'hsl(var(--about-heading))' }}>
+                    Proč finská sauna?
+                  </h3>
+                </div>
+                
+                <ul className="space-y-3">
+                  {benefits.map((benefit, index) => (
+                    <li 
+                      key={index} 
+                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-500 hover:bg-muted/30 ${
+                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                      }`}
+                      style={{ transitionDelay: `${400 + index * 100}ms` }}
+                    >
+                      <div className="p-1.5 bg-eco-green/10 rounded-full mt-0.5 flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-eco-green" />
+                      </div>
+                      <span className="text-base font-light" style={{ color: 'hsl(var(--about-main-text))' }}>{benefit.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
