@@ -56,6 +56,11 @@ Updated: Luxusní wellness paleta s akcentní barvou
     --amber-dark: 20 80% 38%;
     --ember-glow: 18 85% 45%;
     
+    /* Legacy luxury-gold aliases */
+    --luxury-gold: 25 75% 50%;
+    --luxury-gold-light: 30 70% 65%;
+    --luxury-gold-dark: 20 80% 38%;
+    
     /* Hero Text Colors */
     --hero-heading: 35 25% 98%;
     --hero-main-text: 35 20% 92%;
