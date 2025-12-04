@@ -2,6 +2,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Baby, Clock, Ticket, Heart, Sparkles, ArrowRight } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { WoodTexture } from "@/components/decorative/WoodTexture";
 import { GiftIcon, SaunaIcon } from "@/components/decorative/HandDrawnIcons";
 import { Button } from "@/components/ui/button";
 
@@ -13,6 +14,9 @@ export const Pricing = () => {
       {/* Decorative Elements */}
       <GlowingOrb color="light" size="lg" className="-top-20 -right-20 opacity-30" />
       <GlowingOrb color="warm" size="md" className="bottom-40 -left-32 opacity-20" />
+      
+      {/* Wood Texture Overlay */}
+      <WoodTexture opacity={0.03} />
       
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
