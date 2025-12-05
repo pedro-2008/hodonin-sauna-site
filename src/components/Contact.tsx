@@ -1,4 +1,3 @@
-import { MapPin, Phone, Mail, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
@@ -17,9 +16,9 @@ export const Contact = () => {
   ];
 
   const contactInfo = [
-    { icon: MapPin, label: "Adresa", value: "Lipová alej 4110/23, Hodonín" },
-    { icon: Phone, label: "Telefon", value: "+420 737 443 674" },
-    { icon: Mail, label: "Email", value: "janasportmasaz@seznam.cz" },
+    { label: "Adresa", value: "Lipová alej 4110/23, Hodonín" },
+    { label: "Telefon", value: "+420 737 443 674" },
+    { label: "Email", value: "janasportmasaz@seznam.cz" },
   ];
 
   return (
@@ -55,14 +54,9 @@ export const Contact = () => {
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))' }}
           >
             <CardHeader className="pb-4">
-              <div className="flex items-center gap-4">
-                <div className="icon-hand-drawn">
-                  <Calendar className="w-8 h-8 text-luxury-gold-dark" />
-                </div>
-                <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
-                  Otevírací doba – listopad 2025
-                </CardTitle>
-              </div>
+              <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
+                Otevírací doba – listopad 2025
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
@@ -98,28 +92,18 @@ export const Contact = () => {
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))', transitionDelay: '150ms' }}
           >
             <CardHeader className="pb-4">
-              <div className="flex items-center gap-4">
-                <div className="icon-hand-drawn">
-                  <MapPin className="w-8 h-8 text-luxury-gold-dark" />
-                </div>
-                <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
-                  Kde nás najdete
-                </CardTitle>
-              </div>
+              <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
+                Kde nás najdete
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {contactInfo.map((item, index) => (
                 <div 
                   key={index}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
+                  className="p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-all duration-300"
                 >
-                  <div className="p-3 bg-luxury-gold/10 rounded-xl group-hover:scale-110 transition-transform">
-                    <item.icon className="w-5 h-5 text-luxury-gold-dark" />
-                  </div>
-                  <div>
-                    <p className="text-sm mb-1 font-light" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.label}</p>
-                    <p className="font-semibold text-lg text-luxury-gold-dark">{item.value}</p>
-                  </div>
+                  <p className="text-sm mb-1 font-light" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.label}</p>
+                  <p className="font-semibold text-lg text-luxury-gold-dark">{item.value}</p>
                 </div>
               ))}
             </CardContent>
@@ -136,14 +120,9 @@ export const Contact = () => {
             style={{ backgroundColor: 'hsl(var(--contact-card-bg))' }}
           >
             <CardHeader>
-              <div className="flex items-center gap-4">
-                <div className="icon-hand-drawn">
-                  <MapPin className="w-8 h-8 text-luxury-gold-dark" />
-                </div>
-                <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
-                  Mapa
-                </CardTitle>
-              </div>
+              <CardTitle className="font-display text-xl" style={{ color: 'hsl(var(--contact-card-heading))' }}>
+                Mapa
+              </CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               <div className="w-full h-[400px] rounded-b-3xl overflow-hidden">
