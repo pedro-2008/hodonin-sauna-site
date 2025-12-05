@@ -16,9 +16,9 @@ export const Gallery = () => {
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-wood-warm/10 border border-wood-warm/20">
-            <Images className="w-4 h-4 text-wood-warm" />
-            <span className="text-sm font-medium tracking-wider uppercase text-wood-warm">Galerie</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-luxury-gold/10 border border-luxury-gold/20">
+            <span className="w-2 h-2 rounded-full bg-luxury-gold" />
+            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold-dark">Galerie</span>
           </div>
           <h2 className="font-display text-5xl md:text-6xl font-medium" style={{ color: 'hsl(var(--services-heading))' }}>
             Nahlédněte k nám
