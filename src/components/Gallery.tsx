@@ -2,7 +2,6 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import massage1 from "@/assets/massage-1.jpg";
 import massage2 from "@/assets/massage-2.jpg";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
-import { Images, Sparkles } from "lucide-react";
 
 export const Gallery = () => {
   const { ref, isVisible } = useScrollAnimation();
