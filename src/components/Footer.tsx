@@ -16,7 +16,7 @@ export const Footer = () => {
           </div>
           
           <p className="text-white/60 text-center mb-10 max-w-md font-light">
-            Autentická finská sauna v srdci Hodonína. Relaxace, regenerace a pohoda pro tělo i duši.
+            Finská sauna v srdci Hodonína. Relaxace, regenerace a pohoda pro tělo i duši.
           </p>
           
           <div className="flex items-center gap-4 mb-12">
