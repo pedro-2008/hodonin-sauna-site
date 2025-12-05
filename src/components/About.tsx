@@ -16,7 +16,7 @@ export const About = () => {
   ];
 
   const features = [
-    { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Autentická finská sauna s teplotou až 90°C" },
+    { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
     { Icon: HotStonesIcon, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
     { Icon: RelaxIcon, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
   ];
