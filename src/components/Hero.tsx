@@ -68,7 +68,7 @@ export const Hero = () => {
         animationDelay: '0.4s',
         animationFillMode: 'backwards'
       }}>
-          Přijďte si odpočinout do autentické finské sauny. Dopřejte si luxusní relax pro tělo i duši.
+          Přijďte si odpočinout do finské sauny. Dopřejte si relax, regeneraci a pohodu pro tělo i duši.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style={{
