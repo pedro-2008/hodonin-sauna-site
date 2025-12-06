@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { SportIcon, RelaxIcon, CuppingIcon, BrainIcon, HotStonesIcon, TractionIcon, TapeIcon, WhirlpoolIcon } from "@/components/decorative/HandDrawnIcons";
 export const Services = () => {
   const {
     ref,
@@ -10,42 +12,50 @@ export const Services = () => {
     title: "Sportovní masáž",
     price: "400 - 800 Kč",
     description: "Specializovaná masáž pro sportovce zaměřená na regeneraci svalů.",
-    features: ["Hluboké svalové techniky", "Individuální přístup", "30-60 minut"]
+    features: ["Hluboké svalové techniky", "Individuální přístup", "30-60 minut"],
+    Icon: SportIcon
   }, {
     title: "Relaxační masáž",
     price: "1200 Kč",
     description: "Jemná celotělová masáž pro úplné uvolnění a odstranění stresu.",
-    features: ["Celotělová masáž", "Aromatické oleje", "90 minut"]
+    features: ["Celotělová masáž", "Aromatické oleje", "90 minut"],
+    Icon: RelaxIcon
   }, {
     title: "Baňkování",
     price: "450 - 500 Kč",
     description: "Tradiční čínská metoda pro zlepšení krevního oběhu.",
-    features: ["Detoxikace organismu", "Zlepšení oběhu", "30-40 minut"]
+    features: ["Detoxikace organismu", "Zlepšení oběhu", "30-40 minut"],
+    Icon: CuppingIcon
   }, {
     title: "Antistresová masáž",
     price: "450 Kč",
     description: "Speciální masáž hlavy a krční páteře pro uvolnění.",
-    features: ["Uvolnění krčních svalů", "Proti migréně", "30-40 minut"]
+    features: ["Uvolnění krčních svalů", "Proti migréně", "30-40 minut"],
+    Icon: BrainIcon
   }, {
     title: "Lávové kameny",
     price: "950 Kč",
     description: "Masáž s horkými vulkanickými kameny pro hlubokou relaxaci.",
-    features: ["Horké lávové kameny", "Hluboká relaxace", "60 minut"]
+    features: ["Horké lávové kameny", "Hluboká relaxace", "60 minut"],
+    Icon: HotStonesIcon
   }, {
     title: "Autotrakční lehátko",
     price: "100 - 200 Kč",
     description: "Moderní zařízení pro protažení páteře a uvolnění kloubů.",
-    features: ["Trakce páteře", "Terapeutické protažení", "10-20 minut"]
+    features: ["Trakce páteře", "Terapeutické protažení", "10-20 minut"],
+    Icon: TractionIcon
   }, {
     title: "Kineziotejping",
     price: "Dle rozsahu",
     description: "Aplikace speciálních pásek pro podporu svalů a kloubů.",
-    features: ["Podpora svalů", "Rehabilitace", "Individuální"]
+    features: ["Podpora svalů", "Rehabilitace", "Individuální"],
+    Icon: TapeIcon
   }, {
     title: "Vířivé vany",
     price: "250 / 500 Kč",
     description: "Relaxace ve vířivých vanách s hydromasážními tryskami.",
-    features: ["Hydromasážní trysky", "Regulace teploty", "30/60 minut"]
+    features: ["Hydromasážní trysky", "Regulace teploty", "30/60 minut"],
+    Icon: WhirlpoolIcon
   }];
   return <section id="services" ref={ref} className="py-32 px-6 relative overflow-hidden bg-gradient-services">
       {/* Decorative Elements */}
@@ -77,41 +87,48 @@ export const Services = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className={`service-card group cursor-pointer border-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
-              transitionDelay: `${index * 80}ms`,
-              transitionDuration: '700ms'
-            }}>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg font-semibold" style={{
-                  color: 'hsl(var(--services-heading))'
+          {services.map((service, index) => {
+          const IconComponent = service.Icon;
+          return <Card key={index} className={`service-card group cursor-pointer border-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+            transitionDelay: `${index * 80}ms`,
+            transitionDuration: '700ms'
+          }}>
+                <CardHeader className="pb-3">
+                  {/* Hand-drawn icon */}
+                  <div className="icon-hand-drawn w-fit mb-4">
+                    <IconComponent size={40} color="hsl(var(--luxury-gold-dark))" className="transition-transform duration-300 group-hover:scale-110" />
+                  </div>
+                  
+                  <CardTitle className="text-lg font-semibold" style={{
+                color: 'hsl(var(--services-heading))'
+              }}>
+                    {service.title}
+                  </CardTitle>
+                  <div className="text-2xl font-bold mt-2 text-luxury-gold-dark">
+                    {service.price}
+                  </div>
+                </CardHeader>
+                
+                <CardContent className="pt-0">
+                  <p className="text-sm mb-4 leading-relaxed font-light" style={{
+                color: 'hsl(var(--services-main-text))'
+              }}>
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center text-sm gap-2" style={{
+                  color: 'hsl(var(--services-accent-text))'
                 }}>
-                  {service.title}
-                </CardTitle>
-                <div className="text-2xl font-bold mt-2 text-luxury-gold-dark">
-                  {service.price}
-                </div>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <p className="text-sm mb-4 leading-relaxed font-light" style={{
-                  color: 'hsl(var(--services-main-text))'
-                }}>
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm gap-2" style={{
-                      color: 'hsl(var(--services-accent-text))'
-                    }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold/60" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+                        <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold/60" />
+                        {feature}
+                      </li>)}
+                  </ul>
+                  
+                  {/* Hover Arrow */}
+                  
+                </CardContent>
+              </Card>;
+        })}
         </div>
       </div>
     </section>;

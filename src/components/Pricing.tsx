@@ -1,7 +1,8 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { User, Baby, Clock, Ticket, Heart, Sparkles, ArrowRight } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { GiftIcon, SaunaIcon } from "@/components/decorative/HandDrawnIcons";
 import { Button } from "@/components/ui/button";
 export const Pricing = () => {
   const {
@@ -33,26 +34,33 @@ export const Pricing = () => {
       }}>
           <div className="gift-voucher rounded-3xl p-8 md:p-10 relative overflow-hidden">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Left side - content */}
+              {/* Left side - Icon and content */}
               <div className="flex-1">
-                <h3 className="font-display text-3xl md:text-4xl font-medium mb-3" style={{
-                  color: 'hsl(var(--pricing-heading))'
-                }}>
-                  Dárkové poukazy
-                </h3>
-                <p className="text-lg mb-4 font-light" style={{
-                  color: 'hsl(var(--pricing-main-text))'
-                }}>Darujte svým blízkým zážitek plný relaxace a pohody. Dárkové poukazy nabízíme v libovolné hodnotě.</p>
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                    Na saunu
-                  </span>
-                  <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                    Na masáže
-                  </span>
-                  <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                    Kombinované
-                  </span>
+                <div className="flex items-start gap-5">
+                  <div className="icon-hand-drawn flex-shrink-0">
+                    <GiftIcon size={56} color="hsl(var(--luxury-gold-dark))" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-3xl md:text-4xl font-medium mb-3" style={{
+                    color: 'hsl(var(--pricing-heading))'
+                  }}>
+                      Dárkové poukazy
+                    </h3>
+                    <p className="text-lg mb-4 font-light" style={{
+                    color: 'hsl(var(--pricing-main-text))'
+                  }}>Darujte svým blízkým zážitek plný relaxace a pohody. Dárkové poukazy nabízíme v libovolné hodnotě.</p>
+                    <div className="flex flex-wrap gap-3">
+                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
+                        Na saunu
+                      </span>
+                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
+                        Na masáže
+                      </span>
+                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
+                        Kombinované
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -81,77 +89,96 @@ export const Pricing = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Jednorázový vstup */}
           <Card className={`luxury-card overflow-hidden border-0 transition-all duration-1000 hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
-            transitionDelay: '200ms'
-          }}>
+          transitionDelay: '200ms'
+        }}>
             <CardHeader className="pb-4">
-              <CardTitle className="font-display text-2xl" style={{
+              <div className="flex items-center gap-4">
+                <div className="icon-hand-drawn">
+                  <SaunaIcon size={40} color="hsl(var(--luxury-gold-dark))" />
+                </div>
+                <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'
               }}>
-                Jednorázový vstup
-              </CardTitle>
+                  Jednorázový vstup
+                </CardTitle>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
               {[{
-                label: "1 osoba / 2 hodiny",
-                price: "250 Kč"
-              }, {
-                label: "Děti do 15 let",
-                price: "150 Kč"
-              }, {
-                label: "Časově neomezený vstup",
-                price: "350 Kč"
-              }].map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-4 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-all duration-300">
-                  <span className="font-medium" style={{
-                    color: 'hsl(var(--pricing-main-text))'
-                  }}>{item.label}</span>
+              icon: User,
+              label: "1 osoba / 2 hodiny",
+              price: "250 Kč"
+            }, {
+              icon: Baby,
+              label: "Děti do 15 let",
+              price: "150 Kč"
+            }, {
+              icon: Clock,
+              label: "Časově neomezený vstup",
+              price: "350 Kč"
+            }].map((item, index) => <div key={index} className="flex items-center justify-between p-4 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-all duration-300 group">
+                  <div className="flex items-center gap-3">
+                    <item.icon className="w-5 h-5 text-luxury-gold-dark group-hover:scale-110 transition-transform" />
+                    <span className="font-medium" style={{
+                  color: 'hsl(var(--pricing-main-text))'
+                }}>{item.label}</span>
+                  </div>
                   <span className="text-2xl font-bold text-luxury-gold-dark">{item.price}</span>
-                </div>
-              ))}
+                </div>)}
             </CardContent>
           </Card>
 
           {/* Permanentky */}
           <Card className={`luxury-card overflow-hidden border-0 relative transition-all duration-1000 hover-lift ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
-            transitionDelay: '300ms'
-          }}>
+          transitionDelay: '300ms'
+        }}>
             {/* Popular Badge */}
             <div className="absolute top-4 right-4 px-4 py-1.5 bg-gradient-cta text-accent-foreground text-xs font-bold rounded-full shadow-gold">
+              <Sparkles className="w-3 h-3 inline mr-1" />
               Nejvýhodnější
             </div>
             
             <CardHeader className="pb-4">
-              <CardTitle className="font-display text-2xl" style={{
+              <div className="flex items-center gap-4">
+                <div className="icon-hand-drawn">
+                  <Ticket className="w-10 h-10 text-luxury-gold-dark" />
+                </div>
+                <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'
               }}>
-                Permanentky
-              </CardTitle>
+                  Permanentky
+                </CardTitle>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4">
               {[{
-                label: "10 vstupů",
-                price: "2300 Kč",
-                savings: "Ušetříte 200 Kč"
-              }, {
-                label: "20 vstupů",
-                price: "4200 Kč",
-                savings: "Ušetříte 800 Kč"
-              }].map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-4 rounded-2xl bg-luxury-gold/5 hover:bg-luxury-gold/10 transition-all duration-300 border border-luxury-gold/10">
-                  <div>
-                    <span className="font-medium block" style={{
-                      color: 'hsl(var(--pricing-main-text))'
-                    }}>{item.label}</span>
-                    <span className="text-xs font-medium text-eco-green">{item.savings}</span>
+              label: "10 vstupů",
+              price: "2300 Kč",
+              savings: "Ušetříte 200 Kč"
+            }, {
+              label: "20 vstupů",
+              price: "4200 Kč",
+              savings: "Ušetříte 800 Kč"
+            }].map((item, index) => <div key={index} className="flex items-center justify-between p-4 rounded-2xl bg-luxury-gold/5 hover:bg-luxury-gold/10 transition-all duration-300 border border-luxury-gold/10 group">
+                  <div className="flex items-center gap-3">
+                    <Ticket className="w-5 h-5 text-luxury-gold-dark group-hover:scale-110 transition-transform" />
+                    <div>
+                      <span className="font-medium block" style={{
+                    color: 'hsl(var(--pricing-main-text))'
+                  }}>{item.label}</span>
+                      <span className="text-xs font-medium text-eco-green">{item.savings}</span>
+                    </div>
                   </div>
                   <span className="text-2xl font-bold text-luxury-gold-dark">{item.price}</span>
-                </div>
-              ))}
+                </div>)}
               
-              <div className="pt-4 mt-4 border-t border-border/50">
+              <div className="flex items-start gap-3 pt-4 mt-4 border-t border-border/50">
+                <div className="p-2 bg-eco-green/10 rounded-xl">
+                  <Heart className="w-4 h-4 text-eco-green" />
+                </div>
                 <p className="text-sm font-light" style={{
-                  color: 'hsl(var(--pricing-main-text))'
-                }}>
+                color: 'hsl(var(--pricing-main-text))'
+              }}>
                   <span className="font-semibold">Tip:</span> Permanentky jsou přenosné – můžete je sdílet s rodinou nebo přáteli.
                 </p>
               </div>

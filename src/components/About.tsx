@@ -1,22 +1,24 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent } from "@/components/ui/card";
+import { Thermometer, CheckCircle2 } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { SaunaIcon, HotStonesIcon, RelaxIcon } from "@/components/decorative/HandDrawnIcons";
 import naseSaunaImage from "@/assets/nase-sauna.jpg";
 
 export const About = () => {
   const { ref, isVisible } = useScrollAnimation();
   
   const benefits = [
-    "Zlepšuje krevní oběh a imunitní systém",
-    "Uvolňuje svalové napětí a bolest",
-    "Podporuje detoxikaci organismu",
-    "Snižuje stres a zlepšuje náladu",
+    { icon: CheckCircle2, text: "Zlepšuje krevní oběh a imunitní systém" },
+    { icon: CheckCircle2, text: "Uvolňuje svalové napětí a bolest" },
+    { icon: CheckCircle2, text: "Podporuje detoxikaci organismu" },
+    { icon: CheckCircle2, text: "Snižuje stres a zlepšuje náladu" },
   ];
 
   const features = [
-    { title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
-    { title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
-    { title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
+    { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
+    { Icon: HotStonesIcon, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
+    { Icon: RelaxIcon, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
   ];
 
   return (
@@ -54,25 +56,35 @@ export const About = () => {
             </div>
             
             {/* Feature cards */}
-            <div className="space-y-4 mb-10">
+            <div className="space-y-5 mb-10">
               {features.map((item, index) => (
                 <div 
                   key={index} 
-                  className={`p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-border/30 hover-lift transition-all duration-700 ${
+                  className={`flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-border/30 hover-lift transition-all duration-700 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
-                  <h4 className="font-semibold text-lg mb-1" style={{ color: 'hsl(var(--about-heading))' }}>{item.title}</h4>
-                  <p className="text-sm font-light" style={{ color: 'hsl(var(--about-accent-text))' }}>{item.desc}</p>
+                  <div className="icon-hand-drawn flex-shrink-0">
+                    <item.Icon size={36} color="hsl(var(--luxury-gold-dark))" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-1" style={{ color: 'hsl(var(--about-heading))' }}>{item.title}</h4>
+                    <p className="text-sm font-light" style={{ color: 'hsl(var(--about-accent-text))' }}>{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
             
             {/* Temperature Badge */}
-            <div className="inline-flex items-center gap-4 px-6 py-4 bg-gradient-to-r from-luxury-gold/10 to-luxury-gold/5 rounded-2xl border border-luxury-gold/20">
-              <h3 className="text-4xl font-bold text-luxury-gold-dark">90°C</h3>
-              <p className="text-sm font-light" style={{ color: 'hsl(var(--about-accent-text))' }}>Optimální teplota</p>
+            <div className="inline-flex items-center gap-5 px-7 py-5 bg-gradient-to-r from-luxury-gold/10 to-luxury-gold/5 rounded-2xl border border-luxury-gold/20">
+              <div className="p-3 bg-luxury-gold/15 rounded-xl">
+                <Thermometer className="w-8 h-8 text-luxury-gold-dark" />
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold text-luxury-gold-dark">90°C</h3>
+                <p className="text-sm font-light" style={{ color: 'hsl(var(--about-accent-text))' }}>Optimální teplota</p>
+              </div>
             </div>
           </div>
           
@@ -97,9 +109,14 @@ export const About = () => {
             {/* Benefits Card */}
             <Card className="luxury-card overflow-hidden">
               <CardContent className="p-6 md:p-8">
-                <h3 className="font-display text-xl md:text-2xl font-medium mb-6" style={{ color: 'hsl(var(--about-heading))' }}>
-                  Proč finská sauna?
-                </h3>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2.5 bg-luxury-gold/10 rounded-xl">
+                    <CheckCircle2 className="w-6 h-6 text-luxury-gold-dark" />
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl font-medium" style={{ color: 'hsl(var(--about-heading))' }}>
+                    Proč finská sauna?
+                  </h3>
+                </div>
                 
                 <ul className="space-y-3">
                   {benefits.map((benefit, index) => (
@@ -110,8 +127,10 @@ export const About = () => {
                       }`}
                       style={{ transitionDelay: `${400 + index * 100}ms` }}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-luxury-gold mt-2 flex-shrink-0" />
-                      <span className="text-base font-light" style={{ color: 'hsl(var(--about-main-text))' }}>{benefit}</span>
+                      <div className="p-1.5 bg-eco-green/10 rounded-full mt-0.5 flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-eco-green" />
+                      </div>
+                      <span className="text-base font-light" style={{ color: 'hsl(var(--about-main-text))' }}>{benefit.text}</span>
                     </li>
                   ))}
                 </ul>
