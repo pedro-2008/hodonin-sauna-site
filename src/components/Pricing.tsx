@@ -1,7 +1,8 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { User, Baby, Clock, Ticket, Heart, Sparkles, ArrowRight, Gift, Flame } from "lucide-react";
+import { User, Baby, Clock, Ticket, Heart, Sparkles, ArrowRight } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { GiftIcon, SaunaIcon } from "@/components/decorative/HandDrawnIcons";
 import { Button } from "@/components/ui/button";
 export const Pricing = () => {
   const {
@@ -36,8 +37,8 @@ export const Pricing = () => {
               {/* Left side - Icon and content */}
               <div className="flex-1">
                 <div className="flex items-start gap-5">
-                  <div className="p-4 bg-luxury-gold/15 rounded-xl flex-shrink-0">
-                    <Gift className="w-10 h-10 text-luxury-gold-dark" />
+                  <div className="icon-hand-drawn flex-shrink-0">
+                    <GiftIcon size={56} color="hsl(var(--luxury-gold-dark))" />
                   </div>
                   <div>
                     <h3 className="font-display text-3xl md:text-4xl font-medium mb-3" style={{
@@ -92,8 +93,8 @@ export const Pricing = () => {
         }}>
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-luxury-gold/10 rounded-xl">
-                  <Flame className="w-8 h-8 text-luxury-gold-dark" />
+                <div className="icon-hand-drawn">
+                  <SaunaIcon size={40} color="hsl(var(--luxury-gold-dark))" />
                 </div>
                 <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'
@@ -139,8 +140,8 @@ export const Pricing = () => {
             
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-luxury-gold/10 rounded-xl">
-                  <Ticket className="w-8 h-8 text-luxury-gold-dark" />
+                <div className="icon-hand-drawn">
+                  <Ticket className="w-10 h-10 text-luxury-gold-dark" />
                 </div>
                 <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'

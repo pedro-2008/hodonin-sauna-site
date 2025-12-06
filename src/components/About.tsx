@@ -1,7 +1,8 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Card, CardContent } from "@/components/ui/card";
-import { Thermometer, CheckCircle2, Flame, Droplets, TreePine } from "lucide-react";
+import { Thermometer, CheckCircle2 } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
+import { SaunaIcon, HotStonesIcon, RelaxIcon } from "@/components/decorative/HandDrawnIcons";
 import naseSaunaImage from "@/assets/nase-sauna.jpg";
 
 export const About = () => {
@@ -15,9 +16,9 @@ export const About = () => {
   ];
 
   const features = [
-    { icon: Flame, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
-    { icon: Droplets, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
-    { icon: TreePine, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
+    { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
+    { Icon: HotStonesIcon, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
+    { Icon: RelaxIcon, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
   ];
 
   return (
@@ -64,8 +65,8 @@ export const About = () => {
                   }`}
                   style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
-                  <div className="p-3 bg-luxury-gold/10 rounded-xl flex-shrink-0">
-                    <item.icon className="w-7 h-7 text-luxury-gold-dark" />
+                  <div className="icon-hand-drawn flex-shrink-0">
+                    <item.Icon size={36} color="hsl(var(--luxury-gold-dark))" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1" style={{ color: 'hsl(var(--about-heading))' }}>{item.title}</h4>
