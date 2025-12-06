@@ -1,16 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
-
-// Service images
-import sportMassageImg from "@/assets/service-sport-massage.jpg";
-import relaxMassageImg from "@/assets/service-relax-massage.jpg";
-import cuppingImg from "@/assets/service-cupping.jpg";
-import antistressImg from "@/assets/service-antistress.jpg";
-import hotStonesImg from "@/assets/service-hot-stones.jpg";
-import tractionImg from "@/assets/service-traction.jpg";
-import kinesioImg from "@/assets/service-kinesio.jpg";
-import whirlpoolImg from "@/assets/service-whirlpool.jpg";
+import { Dumbbell, Sparkles, CircleDot, Brain, Flame, BedDouble, Bandage, Waves } from "lucide-react";
 
 export const Services = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -21,56 +12,56 @@ export const Services = () => {
       price: "400 - 800 Kč",
       description: "Specializovaná masáž pro sportovce zaměřená na regeneraci svalů.",
       features: ["Hluboké svalové techniky", "Individuální přístup", "30-60 minut"],
-      image: sportMassageImg
+      icon: Dumbbell
     },
     {
       title: "Relaxační masáž",
       price: "1200 Kč",
       description: "Jemná celotělová masáž pro úplné uvolnění a odstranění stresu.",
       features: ["Celotělová masáž", "Aromatické oleje", "90 minut"],
-      image: relaxMassageImg
+      icon: Sparkles
     },
     {
       title: "Baňkování",
       price: "450 - 500 Kč",
       description: "Tradiční čínská metoda pro zlepšení krevního oběhu.",
       features: ["Detoxikace organismu", "Zlepšení oběhu", "30-40 minut"],
-      image: cuppingImg
+      icon: CircleDot
     },
     {
       title: "Antistresová masáž",
       price: "450 Kč",
       description: "Speciální masáž hlavy a krční páteře pro uvolnění.",
       features: ["Uvolnění krčních svalů", "Proti migréně", "30-40 minut"],
-      image: antistressImg
+      icon: Brain
     },
     {
       title: "Lávové kameny",
       price: "950 Kč",
       description: "Masáž s horkými vulkanickými kameny pro hlubokou relaxaci.",
       features: ["Horké lávové kameny", "Hluboká relaxace", "60 minut"],
-      image: hotStonesImg
+      icon: Flame
     },
     {
       title: "Autotrakční lehátko",
       price: "100 - 200 Kč",
       description: "Moderní zařízení pro protažení páteře a uvolnění kloubů.",
       features: ["Trakce páteře", "Terapeutické protažení", "10-20 minut"],
-      image: tractionImg
+      icon: BedDouble
     },
     {
       title: "Kineziotejping",
       price: "Dle rozsahu",
       description: "Aplikace speciálních pásek pro podporu svalů a kloubů.",
       features: ["Podpora svalů", "Rehabilitace", "Individuální"],
-      image: kinesioImg
+      icon: Bandage
     },
     {
       title: "Vířivé vany",
       price: "250 / 500 Kč",
       description: "Relaxace ve vířivých vanách s hydromasážními tryskami.",
       features: ["Hydromasážní trysky", "Regulace teploty", "30/60 minut"],
-      image: whirlpoolImg
+      icon: Waves
     }
   ];
 
@@ -110,58 +101,57 @@ export const Services = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className={`service-card group cursor-pointer border-0 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
-              style={{
-                transitionDelay: `${index * 80}ms`,
-                transitionDuration: '700ms'
-              }}
-            >
-              <CardHeader className="pb-3">
-                {/* Service thumbnail image */}
-                <div className="w-16 h-16 mb-4 rounded-lg overflow-hidden shadow-md">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <Card 
+                key={index} 
+                className={`service-card group cursor-pointer border-0 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} 
+                style={{
+                  transitionDelay: `${index * 80}ms`,
+                  transitionDuration: '700ms'
+                }}
+              >
+                <CardHeader className="pb-3">
+                  {/* Service icon */}
+                  <div className="p-3 bg-luxury-gold/10 rounded-xl w-fit mb-4 group-hover:bg-luxury-gold/20 transition-colors">
+                    <IconComponent className="w-7 h-7 text-luxury-gold-dark" />
+                  </div>
+                  
+                  <CardTitle 
+                    className="text-lg font-semibold" 
+                    style={{ color: 'hsl(var(--services-heading))' }}
+                  >
+                    {service.title}
+                  </CardTitle>
+                  <div className="text-2xl font-bold mt-2 text-luxury-gold-dark">
+                    {service.price}
+                  </div>
+                </CardHeader>
                 
-                <CardTitle 
-                  className="text-lg font-semibold" 
-                  style={{ color: 'hsl(var(--services-heading))' }}
-                >
-                  {service.title}
-                </CardTitle>
-                <div className="text-2xl font-bold mt-2 text-luxury-gold-dark">
-                  {service.price}
-                </div>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <p 
-                  className="text-sm mb-4 leading-relaxed font-light" 
-                  style={{ color: 'hsl(var(--services-main-text))' }}
-                >
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li 
-                      key={featureIndex} 
-                      className="flex items-center text-sm gap-2" 
-                      style={{ color: 'hsl(var(--services-accent-text))' }}
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold/60" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+                <CardContent className="pt-0">
+                  <p 
+                    className="text-sm mb-4 leading-relaxed font-light" 
+                    style={{ color: 'hsl(var(--services-main-text))' }}
+                  >
+                    {service.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li 
+                        key={featureIndex} 
+                        className="flex items-center text-sm gap-2" 
+                        style={{ color: 'hsl(var(--services-accent-text))' }}
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold/60" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
