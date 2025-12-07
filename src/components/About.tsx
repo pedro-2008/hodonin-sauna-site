@@ -35,9 +35,9 @@ export const About = () => {
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-luxury-gold/10 border border-luxury-gold/20">
-            <span className="w-2 h-2 rounded-full bg-luxury-gold" />
-            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold-dark">O naší sauně</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-amber/10 border border-amber/20">
+            <span className="w-2 h-2 rounded-full bg-amber" />
+            <span className="text-sm font-medium tracking-wider uppercase text-amber-dark">O naší sauně</span>
           </div>
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-4 elegant-underline inline-block" style={{ color: 'hsl(var(--about-heading))' }}>
             Teplo, ticho a vůně dřeva
@@ -47,11 +47,11 @@ export const About = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             {/* Quote */}
-            <div className="mb-10 p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-luxury-gold/10">
+            <div className="mb-10 p-6 rounded-2xl luxury-card">
               <p className="text-xl leading-relaxed font-light italic" style={{ color: 'hsl(var(--about-main-text))' }}>
-                <span className="font-display text-4xl text-luxury-gold not-italic">"</span>
+                <span className="font-display text-4xl text-amber not-italic">"</span>
                 Ticho, teplo a klid. Místo, kde si můžete odpočinout od všeho a být sami sebou.
-                <span className="font-display text-4xl text-luxury-gold not-italic">"</span>
+                <span className="font-display text-4xl text-amber not-italic">"</span>
               </p>
             </div>
             
@@ -60,13 +60,13 @@ export const About = () => {
               {features.map((item, index) => (
                 <div 
                   key={index} 
-                  className={`flex items-start gap-4 p-5 rounded-2xl bg-white/70 backdrop-blur-sm border border-border/30 hover-lift transition-all duration-700 ${
+                  className={`flex items-start gap-4 p-5 rounded-2xl luxury-card hover-lift transition-all duration-700 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: `${200 + index * 100}ms` }}
                 >
                   <div className="icon-hand-drawn flex-shrink-0">
-                    <item.Icon size={36} color="hsl(var(--luxury-gold-dark))" />
+                    <item.Icon size={36} color="hsl(var(--amber-dark))" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1" style={{ color: 'hsl(var(--about-heading))' }}>{item.title}</h4>
@@ -77,12 +77,12 @@ export const About = () => {
             </div>
             
             {/* Temperature Badge */}
-            <div className="inline-flex items-center gap-5 px-7 py-5 bg-gradient-to-r from-luxury-gold/10 to-luxury-gold/5 rounded-2xl border border-luxury-gold/20">
-              <div className="p-3 bg-luxury-gold/15 rounded-xl">
-                <Thermometer className="w-8 h-8 text-luxury-gold-dark" />
+            <div className="inline-flex items-center gap-5 px-7 py-5 luxury-card rounded-2xl">
+              <div className="p-3 bg-amber/15 rounded-xl">
+                <Thermometer className="w-8 h-8 text-amber-dark" />
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-luxury-gold-dark">90°C</h3>
+                <h3 className="text-4xl font-bold text-amber-dark">90°C</h3>
                 <p className="text-sm font-light" style={{ color: 'hsl(var(--about-accent-text))' }}>Optimální teplota</p>
               </div>
             </div>
@@ -107,11 +107,11 @@ export const About = () => {
             </div>
 
             {/* Benefits Card */}
-            <Card className="luxury-card overflow-hidden">
+            <Card className="luxury-card overflow-hidden border-0">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2.5 bg-luxury-gold/10 rounded-xl">
-                    <CheckCircle2 className="w-6 h-6 text-luxury-gold-dark" />
+                  <div className="p-2.5 bg-amber/10 rounded-xl">
+                    <CheckCircle2 className="w-6 h-6 text-amber-dark" />
                   </div>
                   <h3 className="font-display text-xl md:text-2xl font-medium" style={{ color: 'hsl(var(--about-heading))' }}>
                     Proč finská sauna?
@@ -122,13 +122,13 @@ export const About = () => {
                   {benefits.map((benefit, index) => (
                     <li 
                       key={index} 
-                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-500 hover:bg-muted/30 ${
+                      className={`flex items-start gap-3 p-3 rounded-xl transition-all duration-500 hover:bg-amber/5 ${
                         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                       }`}
                       style={{ transitionDelay: `${400 + index * 100}ms` }}
                     >
-                      <div className="p-1.5 bg-eco-green/10 rounded-full mt-0.5 flex-shrink-0">
-                        <benefit.icon className="w-4 h-4 text-eco-green" />
+                      <div className="p-1.5 bg-amber/10 rounded-full mt-0.5 flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-amber-dark" />
                       </div>
                       <span className="text-base font-light" style={{ color: 'hsl(var(--about-main-text))' }}>{benefit.text}</span>
                     </li>
