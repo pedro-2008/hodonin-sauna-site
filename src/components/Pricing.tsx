@@ -133,10 +133,7 @@ export const Pricing = () => {
           transitionDelay: '300ms'
         }}>
             {/* Popular Badge */}
-            <div className="absolute top-4 right-4 px-4 py-1.5 bg-gradient-cta text-accent-foreground text-xs font-bold rounded-full shadow-gold">
-              <Sparkles className="w-3 h-3 inline mr-1" />
-              Nejvýhodnější
-            </div>
+            
             
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
