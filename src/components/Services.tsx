@@ -70,9 +70,9 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto relative">
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-luxury-gold/10 border border-luxury-gold/20">
-            <span className="w-2 h-2 rounded-full bg-luxury-gold" />
-            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold-dark">Služby</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-amber/15 border border-amber/25">
+            <span className="w-2 h-2 rounded-full bg-amber" />
+            <span className="text-sm font-medium tracking-wider uppercase text-amber-light">Služby</span>
           </div>
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-6 elegant-underline inline-block" style={{
           color: 'hsl(var(--services-heading))'
@@ -89,43 +89,34 @@ export const Services = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => {
           const IconComponent = service.Icon;
-          return <Card key={index} className={`service-card group cursor-pointer border-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+          return <Card key={index} className={`service-card-light group cursor-pointer border-0 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
             transitionDelay: `${index * 80}ms`,
             transitionDuration: '700ms'
           }}>
                 <CardHeader className="pb-3">
                   {/* Hand-drawn icon */}
                   <div className="icon-hand-drawn w-fit mb-4">
-                    <IconComponent size={40} color="hsl(var(--luxury-gold-dark))" className="transition-transform duration-300 group-hover:scale-110" />
+                    <IconComponent size={40} color="hsl(var(--amber-dark))" className="transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   
-                  <CardTitle className="text-lg font-semibold" style={{
-                color: 'hsl(var(--services-heading))'
-              }}>
+                  <CardTitle className="text-lg font-semibold text-card-foreground">
                     {service.title}
                   </CardTitle>
-                  <div className="text-2xl font-bold mt-2 text-luxury-gold-dark">
+                  <div className="text-2xl font-bold mt-2 text-amber-dark">
                     {service.price}
                   </div>
                 </CardHeader>
                 
                 <CardContent className="pt-0">
-                  <p className="text-sm mb-4 leading-relaxed font-light" style={{
-                color: 'hsl(var(--services-main-text))'
-              }}>
+                  <p className="text-sm mb-4 leading-relaxed font-light text-muted-foreground">
                     {service.description}
                   </p>
                   <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center text-sm gap-2" style={{
-                  color: 'hsl(var(--services-accent-text))'
-                }}>
-                        <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold/60" />
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center text-sm gap-2 text-stone-light">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber/60" />
                         {feature}
                       </li>)}
                   </ul>
-                  
-                  {/* Hover Arrow */}
-                  
                 </CardContent>
               </Card>;
         })}

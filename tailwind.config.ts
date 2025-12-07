@@ -50,21 +50,27 @@ export default {
 				},
 				card: {
 					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					foreground: 'hsl(var(--card-foreground))',
+					warm: 'hsl(var(--card-warm))',
+					'warm-foreground': 'hsl(var(--card-warm-foreground))'
 				},
-			// Finská sauna - dřevěné tóny
+				// Dřevěné tóny - rozšířená paleta
 				wood: {
 					warm: 'hsl(var(--wood-warm))',
 					light: 'hsl(var(--wood-light))',
 					dark: 'hsl(var(--wood-dark))',
-					honey: 'hsl(var(--wood-honey))'
+					honey: 'hsl(var(--wood-honey))',
+					cabin: 'hsl(var(--wood-cabin))'
 				},
-				cream: 'hsl(var(--cream))',
+				cream: {
+					DEFAULT: 'hsl(var(--cream))',
+					warm: 'hsl(var(--cream-warm))'
+				},
 				stone: {
 					DEFAULT: 'hsl(var(--stone))',
 					light: 'hsl(var(--stone-light))'
 				},
-				// Jantarová akcentní paleta
+				// Jantarová/oheň paleta
 				amber: {
 					DEFAULT: 'hsl(var(--amber))',
 					light: 'hsl(var(--amber-light))',
@@ -72,6 +78,9 @@ export default {
 				},
 				ember: {
 					glow: 'hsl(var(--ember-glow))'
+				},
+				fire: {
+					warm: 'hsl(var(--fire-warm))'
 				},
 				// Legacy alias pro kompatibilitu
 				luxury: {

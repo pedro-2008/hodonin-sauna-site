@@ -28,35 +28,35 @@ export const Navigation = () => {
     label: "Ceník",
     id: "pricing"
   }];
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "py-3 bg-white/95 backdrop-blur-xl shadow-lg" : "py-5 bg-transparent"}`}>
+  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "py-3 bg-cream/95 backdrop-blur-xl shadow-lg border-b border-wood-light/20" : "py-5 bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
           <button onClick={() => scrollToSection("hero")} className="flex items-center gap-2 group">
             
-            <span className={`font-display text-xl font-medium transition-colors duration-300 ${isScrolled ? "text-wood-dark" : "text-white"}`}>
+            <span className={`font-display text-xl font-medium transition-colors duration-300 ${isScrolled ? "text-wood-dark" : "text-cream"}`}>
               Sauna Na Teze
             </span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${isScrolled ? "text-wood-dark hover:text-luxury-gold-dark hover:bg-luxury-gold/10" : "text-white/90 hover:text-white hover:bg-white/10"}`}>
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${isScrolled ? "text-wood-dark hover:text-amber-dark hover:bg-amber/10" : "text-cream/90 hover:text-cream hover:bg-cream/10"}`}>
                 {item.label}
               </button>)}
-            <button onClick={() => scrollToSection("contact")} className={`ml-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${isScrolled ? "bg-gradient-cta text-accent-foreground shadow-gold hover:shadow-lg" : "bg-luxury-gold/90 text-accent-foreground hover:bg-luxury-gold"}`}>
+            <button onClick={() => scrollToSection("contact")} className="ml-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 bg-amber text-accent-foreground shadow-amber hover:shadow-lg hover:bg-amber-dark">
               Kontakt
             </button>
           </div>
 
-          <Button variant="ghost" size="icon" className={`md:hidden rounded-full ${isScrolled ? "text-wood-dark hover:bg-luxury-gold/10" : "text-white hover:bg-white/10"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <Button variant="ghost" size="icon" className={`md:hidden rounded-full ${isScrolled ? "text-wood-dark hover:bg-amber/10" : "text-cream hover:bg-cream/10"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X /> : <Menu />}
           </Button>
         </div>
 
-        {isMobileMenuOpen && <div className={`md:hidden mt-4 pb-4 space-y-2 animate-fade-in ${isScrolled ? "" : "bg-black/20 backdrop-blur-xl rounded-2xl p-4 -mx-2"}`}>
+        {isMobileMenuOpen && <div className={`md:hidden mt-4 pb-4 space-y-2 animate-fade-in ${isScrolled ? "" : "bg-wood-dark/80 backdrop-blur-xl rounded-2xl p-4 -mx-2"}`}>
             {[...navItems, {
           label: "Kontakt",
           id: "contact"
-        }].map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isScrolled ? "text-wood-dark hover:text-luxury-gold-dark hover:bg-luxury-gold/10" : "text-white hover:bg-white/10"}`}>
+        }].map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isScrolled ? "text-wood-dark hover:text-amber-dark hover:bg-amber/10" : "text-cream hover:bg-cream/10"}`}>
                 {item.label}
               </button>)}
           </div>}
