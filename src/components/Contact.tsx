@@ -69,23 +69,19 @@ export const Contact = () => {
                 {schedule.map((item, index) => (
                   <div 
                     key={index}
-                    className={`flex items-center justify-between p-3 rounded-xl transition-all duration-300 ${
+                    className={`grid grid-cols-[100px_1fr_80px] items-center gap-4 p-3 rounded-xl transition-all duration-300 ${
                       item.time === "Zavřeno" 
                         ? "bg-red-500/5" 
                         : "bg-muted/30 hover:bg-muted/50"
                     }`}
                   >
                     <span className="font-medium" style={{ color: 'hsl(var(--contact-card-secondary))' }}>{item.day}</span>
-                    <div className="flex items-center gap-3">
-                      <span className={`font-semibold ${item.time === "Zavřeno" ? "text-red-400/80" : "text-luxury-gold-dark"}`}>
-                        {item.time}
-                      </span>
-                      {item.type && (
-                        <span className="text-xs px-3 py-1 rounded-full bg-luxury-gold/10 text-luxury-gold-dark font-medium">
-                          {item.type}
-                        </span>
-                      )}
-                    </div>
+                    <span className={`font-semibold text-center ${item.time === "Zavřeno" ? "text-red-400/80" : "text-luxury-gold-dark"}`}>
+                      {item.time}
+                    </span>
+                    <span className={`text-xs px-3 py-1 rounded-full text-center ${item.type ? "bg-luxury-gold/10 text-luxury-gold-dark font-medium" : ""}`}>
+                      {item.type}
+                    </span>
                   </div>
                 ))}
               </div>
