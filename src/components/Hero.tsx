@@ -116,7 +116,7 @@ export const Hero = () => {
             aboutSection.scrollIntoView({ behavior: 'smooth' });
           }
         }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer hover:scale-110 transition-transform"
         aria-label="Scroll to next section"
       >
         <ChevronDown className="w-8 h-8 text-white/50 hover:text-white/80 transition-colors" />
