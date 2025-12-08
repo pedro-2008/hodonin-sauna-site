@@ -81,9 +81,7 @@ export const Services = () => {
           </h2>
           <p className="text-xl max-w-2xl mx-auto mt-10 font-light" style={{
           color: 'hsl(var(--services-main-text))'
-        }}>
-            Finská sauna, vířivé vany a profesionální masážní služby
-          </p>
+        }}>Finská sauna, vířivé vany a masážní služby</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
