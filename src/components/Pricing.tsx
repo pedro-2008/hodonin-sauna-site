@@ -93,9 +93,7 @@ export const Pricing = () => {
         }}>
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
-                <div className="icon-hand-drawn">
-                  <SaunaIcon size={40} color="hsl(var(--luxury-gold-dark))" />
-                </div>
+                
                 <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'
               }}>
@@ -137,9 +135,7 @@ export const Pricing = () => {
             
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
-                <div className="icon-hand-drawn">
-                  <Ticket className="w-10 h-10 text-luxury-gold-dark" />
-                </div>
+                
                 <CardTitle className="font-display text-2xl" style={{
                 color: 'hsl(var(--pricing-heading))'
               }}>
