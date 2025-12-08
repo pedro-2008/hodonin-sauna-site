@@ -3,12 +3,29 @@ import heroImage from "@/assets/sauna-hero.jpg";
 import { SteamParticles } from "@/components/decorative/SteamParticles";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
+
 export const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroImage})`
-    }}>
+      {/* Background Image with Parallax */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          transform: `translateY(${scrollY * 0.4}px)`,
+        }}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
       </div>
       
