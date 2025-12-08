@@ -99,11 +99,11 @@ export const Contact = () => {
                     <span className="font-medium" style={{
                   color: 'hsl(var(--contact-card-secondary))'
                 }}>{item.day}</span>
-                    <span className={`font-semibold ${item.time === "Zavřeno" ? "text-red-400/80 text-right" : "text-luxury-gold-dark text-center"}`}>
-                      {item.time}
+                    <span className={`font-semibold text-center ${item.time === "Zavřeno" ? "" : "text-luxury-gold-dark"}`}>
+                      {item.time !== "Zavřeno" ? item.time : ""}
                     </span>
-                    <span className={`text-xs px-3 py-1 rounded-full text-center ${item.type ? "bg-luxury-gold/10 text-luxury-gold-dark font-medium" : ""}`}>
-                      {item.type}
+                    <span className={`text-xs px-3 py-1 rounded-full text-center ${item.time === "Zavřeno" ? "text-red-400/80 font-semibold text-sm" : item.type ? "bg-luxury-gold/10 text-luxury-gold-dark font-medium" : ""}`}>
+                      {item.time === "Zavřeno" ? "Zavřeno" : item.type}
                     </span>
                   </div>)}
               </div>
