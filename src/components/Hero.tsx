@@ -23,7 +23,7 @@ export const Hero = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
         style={{
           backgroundImage: `url(${heroImage})`,
-          transform: `translateY(${scrollY * 0.4}px)`,
+          transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
