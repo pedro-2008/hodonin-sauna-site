@@ -109,9 +109,18 @@ export const Hero = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-white/50" />
-      </div>
+      <button 
+        onClick={() => {
+          const aboutSection = document.querySelector('#about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+        aria-label="Scroll to next section"
+      >
+        <ChevronDown className="w-8 h-8 text-white/50 hover:text-white/80 transition-colors" />
+      </button>
       
       {/* Bottom Gradient Transition */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/20 to-transparent" />
