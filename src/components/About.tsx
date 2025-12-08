@@ -107,7 +107,11 @@ export const About = () => {
             </div>
 
             {/* Benefits Card */}
-            <Card className="luxury-card overflow-hidden">
+            <Card className="luxury-card overflow-hidden relative">
+              {/* Corner decorations */}
+              <div className="absolute top-3 left-3 w-6 h-6 border-l-2 border-t-2 border-luxury-gold/40" />
+              <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-luxury-gold/40" />
+              
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2.5 bg-luxury-gold/10 rounded-xl">
