@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sauna Na Teze | Finská sauna v Hodoníně</title>
+  <meta name="description" content="Autentická finská sauna v srdci Hodonína. Relaxace, regenerace a pohoda pro tělo i duši. Rezervujte si návštěvu ještě dnes!" />
+  <meta name="keywords" content="sauna, finská sauna, Hodonín, wellness, relaxace, regenerace, masáž" />
+  <meta property="og:title" content="Sauna Na Teze | Finská sauna v Hodoníně" />
+  <meta property="og:description" content="Autentická finská sauna v srdci Hodonína. Relaxace, regenerace a pohoda pro tělo i duši." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://saunanateze.cz" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <style>
+    /* ===== CSS RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* ===== CSS VARIABLES - Finnish Sauna Theme ===== */
+    :root {
+      /* Base colors */
+      --background: 30 25% 94%;
+      --foreground: 20 40% 15%;
+      --card: 35 20% 98%;
+      --card-foreground: 20 40% 15%;
+      
+      /* Primary - dark honey wood */
+      --primary: 22 50% 28%;
+      --primary-foreground: 35 25% 95%;
+      
+      /* Secondary - medium honey */
+      --secondary: 32 45% 65%;
+      --secondary-foreground: 20 45% 15%;
+      
+      --muted: 30 20% 88%;
+      --muted-foreground: 20 25% 40%;
+      
+      /* Accent - warm amber */
+      --accent: 25 75% 50%;
+      --accent-foreground: 20 50% 10%;
+      
+      --border: 30 25% 82%;
+      --ring: 25 75% 50%;
+      
+      /* Finnish sauna - wood tones */
+      --wood-warm: 22 50% 28%;
+      --wood-light: 35 40% 70%;
+      --wood-dark: 18 45% 18%;
+      --wood-honey: 28 55% 45%;
+      --cream: 30 25% 94%;
+      --stone: 25 8% 35%;
+      
+      /* Amber accent palette */
+      --amber: 25 75% 50%;
+      --amber-light: 30 70% 65%;
+      --amber-dark: 20 80% 38%;
+      --ember-glow: 18 85% 45%;
+      
+      /* Luxury gold aliases */
+      --luxury-gold: 25 75% 50%;
+      --luxury-gold-light: 30 70% 65%;
+      --luxury-gold-dark: 20 80% 38%;
+      
+      /* Hero Text Colors */
+      --hero-heading: 35 25% 98%;
+      --hero-main-text: 35 20% 92%;
+      --hero-accent-text: 30 70% 70%;
+      
+      /* About Text Colors */
+      --about-heading: 20 40% 15%;
+      --about-main-text: 20 35% 22%;
+      --about-accent-text: 20 30% 35%;
+      
+      /* Services Text Colors */
+      --services-heading: 20 40% 15%;
+      --services-main-text: 20 30% 25%;
+      --services-accent-text: 20 25% 38%;
+      
+      /* Pricing Text Colors */
+      --pricing-heading: 20 45% 12%;
+      --pricing-main-text: 20 35% 20%;
+      --pricing-accent-text: 20 28% 35%;
+      
+      /* Contact Text Colors */
+      --contact-bg: 18 45% 14%;
+      --contact-heading: 30 70% 68%;
+      --contact-main-text: 35 20% 92%;
+      --contact-card-bg: 32 22% 93%;
+      --contact-card-heading: 20 42% 18%;
+      --contact-card-secondary: 20 22% 42%;
+      
+      /* Eco green for checkmarks */
+      --eco-green: 142 60% 40%;
+      
+      /* Gradients */
+      --gradient-hero: linear-gradient(to top, hsl(18 55% 12%), hsl(22 50% 22%));
+      --gradient-about: linear-gradient(180deg, hsl(30 25% 94%) 0%, hsl(32 28% 90%) 100%);
+      --gradient-services: linear-gradient(180deg, hsl(32 25% 92%) 0%, hsl(30 22% 89%) 100%);
+      --gradient-pricing: linear-gradient(180deg, hsl(35 20% 98%) 0%, hsl(32 28% 94%) 100%);
+      --gradient-contact: linear-gradient(180deg, hsl(18 45% 14%) 0%, hsl(15 50% 10%) 100%);
+      --gradient-cta: linear-gradient(135deg, hsl(25 75% 50%) 0%, hsl(30 70% 55%) 100%);
+      
+      /* Shadows */
+      --shadow-soft: 0 4px 20px hsl(20 40% 15% / 0.08);
+      --shadow-warm: 0 8px 30px hsl(22 50% 28% / 0.15);
+      --shadow-lift: 0 20px 40px hsl(20 40% 15% / 0.12), 0 8px 16px hsl(20 40% 15% / 0.08);
+      
+      --radius: 0.75rem;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+      line-height: 1.6;
+    }
+    
+    .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    
+    /* ===== ANIMATIONS ===== */
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fade-in-up {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) translateX(-50%); }
+      50% { transform: translateY(-10px) translateX(-50%); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.6s ease-out forwards;
+    }
+    
+    .animate-fade-in-up {
+      animation: fade-in-up 0.6s ease-out forwards;
+    }
+    
+    .animate-bounce {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    /* ===== UTILITY CLASSES ===== */
+    .bg-gradient-hero { background: var(--gradient-hero); }
+    .bg-gradient-about { background: var(--gradient-about); }
+    .bg-gradient-services { background: var(--gradient-services); }
+    .bg-gradient-pricing { background: var(--gradient-pricing); }
+    .bg-gradient-contact { background: var(--gradient-contact); }
+    
+    .text-luxury-gold { color: hsl(var(--luxury-gold)); }
+    .text-luxury-gold-dark { color: hsl(var(--luxury-gold-dark)); }
+    .text-wood-dark { color: hsl(var(--wood-dark)); }
+    .text-eco-green { color: hsl(var(--eco-green)); }
+    
+    .bg-luxury-gold { background-color: hsl(var(--luxury-gold)); }
+    .bg-luxury-gold\/5 { background-color: hsl(var(--luxury-gold) / 0.05); }
+    .bg-luxury-gold\/10 { background-color: hsl(var(--luxury-gold) / 0.1); }
+    .bg-luxury-gold\/15 { background-color: hsl(var(--luxury-gold) / 0.15); }
+    .bg-eco-green\/10 { background-color: hsl(var(--eco-green) / 0.1); }
+    
+    .border-luxury-gold\/10 { border-color: hsl(var(--luxury-gold) / 0.1); }
+    .border-luxury-gold\/20 { border-color: hsl(var(--luxury-gold) / 0.2); }
+    .border-luxury-gold\/30 { border-color: hsl(var(--luxury-gold) / 0.3); }
+    .border-luxury-gold\/40 { border-color: hsl(var(--luxury-gold) / 0.4); }
+    
+    /* ===== COMPONENT STYLES ===== */
+    .luxury-card {
+      background: hsl(var(--card) / 0.95);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid hsl(30 40% 80% / 0.5);
+      box-shadow: 0 4px 32px hsl(25 75% 50% / 0.08);
+    }
+    
+    .service-card {
+      background: hsl(var(--card) / 0.98);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid hsl(30 25% 88%);
+      box-shadow: 0 2px 12px hsl(20 40% 15% / 0.04);
+      transition: all 0.5s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px hsl(20 40% 15% / 0.1);
+      border-color: hsl(25 65% 70% / 0.5);
+    }
+    
+    .icon-hand-drawn {
+      padding: 1rem;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, hsl(30 35% 93%) 0%, hsl(28 30% 88%) 100%);
+      border: 1px solid hsl(28 35% 80% / 0.5);
+      transition: all 0.3s ease;
+    }
+    
+    .icon-hand-drawn:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+    
+    .hover-lift {
+      transition: all 0.5s ease;
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lift);
+    }
+    
+    .gift-voucher {
+      background: linear-gradient(135deg, hsl(25 70% 50% / 0.1) 0%, hsl(30 60% 55% / 0.05) 100%);
+      border: 2px solid hsl(25 65% 60% / 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gift-voucher::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-cta);
+    }
+    
+    .elegant-underline {
+      position: relative;
+    }
+    
+    .elegant-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, hsl(var(--amber)), transparent);
+      border-radius: 2px;
+    }
+    
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      background: var(--gradient-cta);
+      color: hsl(var(--accent-foreground));
+      box-shadow: 0 4px 20px hsl(25 75% 50% / 0.35);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px hsl(25 75% 50% / 0.45);
+    }
+    
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      font-size: 1.125rem;
+      background: transparent;
+      border: 1px solid hsl(0 0% 100% / 0.3);
+      color: hsl(var(--hero-accent-text));
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: hsl(0 0% 100% / 0.1);
+      border-color: hsl(0 0% 100% / 0.5);
+      transform: scale(1.05);
+    }
+    
+    /* Card styles */
+    .card-header {
+      padding: 1.5rem 1.5rem 0;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      margin: 0;
+    }
+    
+    /* ===== RESPONSIVE UTILITIES ===== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .md\:text-6xl { font-size: 3.75rem; }
+      .md\:text-8xl { font-size: 6rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+      .lg\:text-7xl { font-size: 4.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+    
+    // ===== CUSTOM HOOKS =====
+    const useScrollAnimation = () => {
+      const ref = useRef(null);
+      const [isVisible, setIsVisible] = useState(false);
+      
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+            }
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        );
+        
+        if (ref.current) {
+          observer.observe(ref.current);
+        }
+        
+        return () => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        };
+      }, []);
+      
+      return { ref, isVisible };
+    };
+    
+    // ===== ICONS =====
+    const ChevronDown = () => (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    );
+    
+    const Thermometer = () => (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+      </svg>
+    );
+    
+    const CheckCircle2 = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="m9 12 2 2 4-4"/>
+      </svg>
+    );
+    
+    const Menu = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+      </svg>
+    );
+    
+    const X = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+      </svg>
+    );
+    
+    const MapPin = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+    );
+    
+    const Phone = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+    );
+    
+    const Mail = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+    );
+    
+    const Calendar = () => (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+      </svg>
+    );
+    
+    const User = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/>
+      </svg>
+    );
+    
+    const Baby = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/>
+      </svg>
+    );
+    
+    const Clock = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+      </svg>
+    );
+    
+    const Ticket = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/>
+      </svg>
+    );
+    
+    const Heart = () => (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+      </svg>
+    );
+    
+    const ArrowRight = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+      </svg>
+    );
+    
+    const Facebook = () => (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    );
+    
+    // Hand-drawn style icons
+    const SaunaIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 42V18L24 6L40 18V42H8Z" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M18 42V28H30V42" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M16 22C16 22 18 18 20 20C22 22 24 16 26 18C28 20 30 22 32 20" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const HotStonesIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="16" cy="34" rx="10" ry="7" stroke={color} strokeWidth="2.5"/>
+        <ellipse cx="32" cy="32" rx="10" ry="7" stroke={color} strokeWidth="2.5"/>
+        <ellipse cx="24" cy="22" rx="8" ry="6" stroke={color} strokeWidth="2.5"/>
+        <path d="M20 10C20 10 22 6 24 8C26 10 28 6 28 6" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M14 16C14 16 15 13 17 14" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M32 18C32 18 33 15 35 16" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const RelaxIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 38C12 38 14 28 24 28C34 28 36 38 36 38" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <circle cx="24" cy="16" r="8" stroke={color} strokeWidth="2.5"/>
+        <path d="M20 14C20 14 21 16 24 16C27 16 28 14 28 14" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M8 20L4 22" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M40 20L44 22" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M10 28L6 30" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M38 28L42 30" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const GiftIcon = ({ size = 56, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="18" width="36" height="24" rx="2" stroke={color} strokeWidth="2.5"/>
+        <rect x="10" y="12" width="28" height="6" rx="1" stroke={color} strokeWidth="2.5"/>
+        <path d="M24 12V42" stroke={color} strokeWidth="2.5"/>
+        <path d="M16 12C16 12 16 6 20 6C24 6 24 12 24 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M32 12C32 12 32 6 28 6C24 6 24 12 24 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const SportIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="12" r="6" stroke={color} strokeWidth="2.5"/>
+        <path d="M12 40V32C12 28 16 24 24 24C32 24 36 28 36 32V40" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M18 32L24 38L30 32" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    );
+    
+    const CuppingIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 24C12 16 16 12 24 12C32 12 36 16 36 24V36H12V24Z" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <circle cx="24" cy="26" r="6" stroke={color} strokeWidth="2"/>
+        <path d="M20 8L24 4L28 8" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    );
+    
+    const BrainIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 42V24" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M16 18C12 18 10 22 10 26C10 32 16 34 16 34" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <path d="M32 18C36 18 38 22 38 26C38 32 32 34 32 34" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+        <ellipse cx="24" cy="14" rx="10" ry="8" stroke={color} strokeWidth="2.5"/>
+        <path d="M20 12C20 12 22 14 24 14C26 14 28 12 28 12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const TractionIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="20" width="32" height="16" rx="2" stroke={color} strokeWidth="2.5"/>
+        <path d="M14 20V12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M34 20V12" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M10 12H18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M30 12H38" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M16 28H32" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    const TapeIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L40 36" stroke={color} strokeWidth="6" strokeLinecap="round"/>
+        <path d="M8 12L40 36" stroke="white" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 4"/>
+        <path d="M12 18L44 42" stroke={color} strokeWidth="3" strokeLinecap="round" opacity="0.5"/>
+      </svg>
+    );
+    
+    const WhirlpoolIcon = ({ size = 40, color = "currentColor" }) => (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="24" cy="28" rx="16" ry="10" stroke={color} strokeWidth="2.5"/>
+        <path d="M12 28V36C12 40 17 44 24 44C31 44 36 40 36 36V28" stroke={color} strokeWidth="2.5"/>
+        <path d="M18 24C18 24 20 28 24 28C28 28 30 24 30 24" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M20 18C20 18 22 14 24 16C26 18 28 14 28 14" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M16 20C16 20 17 17 19 18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+        <path d="M32 20C32 20 31 17 29 18" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    );
+    
+    // ===== GLOWING ORB COMPONENT =====
+    const GlowingOrb = ({ color = "warm", size = "md", className = "" }) => {
+      const sizeClasses = {
+        sm: "w-32 h-32",
+        md: "w-64 h-64", 
+        lg: "w-96 h-96"
+      };
+      
+      const colorStyles = {
+        warm: "radial-gradient(circle, hsla(25, 75%, 50%, 0.15) 0%, transparent 70%)",
+        light: "radial-gradient(circle, hsla(35, 40%, 70%, 0.1) 0%, transparent 70%)"
+      };
+      
+      return (
+        <div 
+          className={`absolute rounded-full pointer-events-none blur-3xl ${sizeClasses[size]} ${className}`}
+          style={{ background: colorStyles[color] }}
+        />
+      );
+    };
+    
+    // ===== NAVIGATION =====
+    const Navigation = () => {
+      const [isScrolled, setIsScrolled] = useState(false);
+      const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+      
+      useEffect(() => {
+        const handleScroll = () => setIsScrolled(window.scrollY > 50);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
+      
+      const scrollToSection = (id) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        setIsMobileMenuOpen(false);
+      };
+      
+      const navItems = [
+        { label: "Úvod", id: "hero" },
+        { label: "O nás", id: "about" },
+        { label: "Služby", id: "services" },
+        { label: "Ceník", id: "pricing" }
+      ];
+      
+      return (
+        <nav style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          padding: isScrolled ? '0.75rem 0' : '1.25rem 0',
+          backgroundColor: isScrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
+          backdropFilter: isScrolled ? 'blur(12px)' : 'none',
+          boxShadow: isScrolled ? '0 4px 20px rgba(0,0,0,0.1)' : 'none',
+          transition: 'all 0.5s ease'
+        }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <button 
+                onClick={() => scrollToSection("hero")}
+                style={{ 
+                  background: 'none', 
+                  border: 'none', 
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+              >
+                <span 
+                  className="font-display"
+                  style={{ 
+                    fontSize: '1.25rem', 
+                    fontWeight: 500,
+                    color: isScrolled ? 'hsl(18 45% 18%)' : 'white'
+                  }}
+                >
+                  Sauna Na Teze
+                </span>
+              </button>
+              
+              <div className="md:flex hidden" style={{ alignItems: 'center', gap: '0.25rem' }}>
+                {navItems.map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    style={{
+                      padding: '0.5rem 1rem',
+                      borderRadius: '9999px',
+                      fontWeight: 500,
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: isScrolled ? 'hsl(18 45% 18%)' : 'rgba(255,255,255,0.9)',
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  style={{
+                    marginLeft: '0.5rem',
+                    padding: '0.625rem 1.5rem',
+                    borderRadius: '9999px',
+                    fontWeight: 600,
+                    background: isScrolled ? 'var(--gradient-cta)' : 'hsl(25 75% 50% / 0.9)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: 'hsl(20 50% 10%)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  Kontakt
+                </button>
+              </div>
+              
+              <button 
+                className="md:hidden"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                style={{
+                  padding: '0.5rem',
+                  borderRadius: '9999px',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: isScrolled ? 'hsl(18 45% 18%)' : 'white'
+                }}
+              >
+                {isMobileMenuOpen ? <X /> : <Menu />}
+              </button>
+            </div>
+            
+            {isMobileMenuOpen && (
+              <div 
+                className="md:hidden"
+                style={{
+                  marginTop: '1rem',
+                  padding: isScrolled ? '0' : '1rem',
+                  background: isScrolled ? 'transparent' : 'rgba(0,0,0,0.2)',
+                  backdropFilter: isScrolled ? 'none' : 'blur(12px)',
+                  borderRadius: '1rem'
+                }}
+              >
+                {[...navItems, { label: "Kontakt", id: "contact" }].map(item => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    style={{
+                      display: 'block',
+                      width: '100%',
+                      textAlign: 'left',
+                      padding: '0.75rem 1rem',
+                      borderRadius: '0.75rem',
+                      fontWeight: 500,
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      color: isScrolled ? 'hsl(18 45% 18%)' : 'white',
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </nav>
+      );
+    };
+    
+    // ===== HERO SECTION =====
+    const Hero = () => {
+      const [scrollY, setScrollY] = useState(0);
+      
+      useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+      
+      return (
+        <section 
+          id="hero"
+          style={{
+            position: 'relative',
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            background: 'var(--gradient-hero)'
+          }}
+        >
+          {/* Background with parallax */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundImage: 'url(https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            transform: `translateY(${scrollY * 0.5}px)`
+          }}>
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.4), rgba(0,0,0,0.7))'
+            }} />
+          </div>
+          
+          <GlowingOrb color="warm" size="lg" className="top-20 -left-32 opacity-40" />
+          <GlowingOrb color="light" size="md" className="bottom-40 -right-20 opacity-30" />
+          
+          {/* Frame lines */}
+          <div style={{
+            position: 'absolute',
+            inset: '2rem',
+            border: '1px solid rgba(255,255,255,0.1)',
+            pointerEvents: 'none'
+          }} />
+          
+          {/* Content */}
+          <div style={{
+            position: 'relative',
+            zIndex: 10,
+            textAlign: 'center',
+            padding: '0 1.5rem',
+            maxWidth: '56rem',
+            margin: '0 auto'
+          }}>
+            {/* Badge */}
+            <div 
+              className="animate-fade-in"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.5rem 1rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255,255,255,0.2)'
+              }}
+            >
+              <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(32 45% 65%)' }} className="animate-pulse" />
+              <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(30 70% 70%)' }}>
+                Finská sauna v Hodoníně
+              </span>
+            </div>
+            
+            {/* Heading */}
+            <h1 
+              className="font-display animate-fade-in"
+              style={{
+                fontSize: 'clamp(3rem, 10vw, 6rem)',
+                fontWeight: 500,
+                marginBottom: '1.5rem',
+                letterSpacing: '0.05em',
+                color: 'hsl(35 25% 98%)'
+              }}
+            >
+              <span style={{ display: 'block' }}>Sauna</span>
+              <span style={{ display: 'block', fontStyle: 'italic', color: 'hsl(32 45% 65% / 0.9)' }}>Na Teze</span>
+            </h1>
+            
+            {/* Divider */}
+            <div 
+              className="animate-fade-in-up"
+              style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                gap: '1rem', 
+                marginBottom: '2rem',
+                animationDelay: '0.2s'
+              }}
+            >
+              <div style={{ width: '4rem', height: '1px', background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.4))' }} />
+              <div style={{ width: '12px', height: '12px', border: '1px solid hsl(32 45% 65% / 0.6)', transform: 'rotate(45deg)' }} />
+              <div style={{ width: '4rem', height: '1px', background: 'linear-gradient(to left, transparent, rgba(255,255,255,0.4))' }} />
+            </div>
+            
+            <p 
+              className="animate-fade-in-up"
+              style={{ 
+                fontSize: '1.25rem', 
+                marginBottom: '1rem', 
+                fontWeight: 300, 
+                letterSpacing: '0.1em',
+                color: 'hsl(35 20% 92%)',
+                animationDelay: '0.3s'
+              }}
+            >
+              Teplo • Klid • Regenerace
+            </p>
+            
+            <p 
+              className="animate-fade-in-up"
+              style={{ 
+                fontSize: '1.125rem', 
+                marginBottom: '3rem', 
+                maxWidth: '40rem', 
+                margin: '0 auto 3rem',
+                lineHeight: 1.7,
+                color: 'hsl(35 20% 92% / 0.9)',
+                animationDelay: '0.4s'
+              }}
+            >
+              Přijďte si odpočinout do finské sauny. Dopřejte si relax, regeneraci a pohodu pro tělo i duši.
+            </p>
+            
+            <div 
+              className="animate-fade-in-up"
+              style={{ animationDelay: '0.6s' }}
+            >
+              <button 
+                className="btn-outline"
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Přijďte se ohřát
+              </button>
+            </div>
+          </div>
+          
+          {/* Scroll indicator */}
+          <button
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            className="animate-bounce"
+            style={{
+              position: 'absolute',
+              bottom: '2rem',
+              left: '50%',
+              zIndex: 20,
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: 'rgba(255,255,255,0.5)'
+            }}
+            aria-label="Scroll to next section"
+          >
+            <ChevronDown />
+          </button>
+        </section>
+      );
+    };
+    
+    // ===== ABOUT SECTION =====
+    const About = () => {
+      const { ref, isVisible } = useScrollAnimation();
+      
+      const benefits = [
+        { text: "Zlepšuje krevní oběh a imunitní systém" },
+        { text: "Uvolňuje svalové napětí a bolest" },
+        { text: "Podporuje detoxikaci organismu" },
+        { text: "Snižuje stres a zlepšuje náladu" }
+      ];
+      
+      const features = [
+        { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
+        { Icon: HotStonesIcon, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
+        { Icon: RelaxIcon, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" }
+      ];
+      
+      return (
+        <section 
+          id="about" 
+          ref={ref}
+          className="bg-gradient-about"
+          style={{ padding: '8rem 1.5rem', position: 'relative', overflow: 'hidden' }}
+        >
+          <GlowingOrb color="light" size="lg" className="-top-32 -right-32 opacity-40" />
+          <GlowingOrb color="warm" size="md" className="bottom-20 -left-20 opacity-25" />
+          
+          <div style={{ maxWidth: '72rem', margin: '0 auto', position: 'relative' }}>
+            {/* Header */}
+            <div 
+              style={{ 
+                textAlign: 'center', 
+                marginBottom: '5rem',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                transition: 'all 1s ease'
+              }}
+            >
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.625rem 1.25rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'hsl(25 75% 50% / 0.1)',
+                border: '1px solid hsl(25 75% 50% / 0.2)'
+              }}>
+                <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(20 80% 38%)' }}>
+                  O naší sauně
+                </span>
+              </div>
+              <h2 
+                className="font-display elegant-underline"
+                style={{ 
+                  display: 'inline-block',
+                  fontSize: 'clamp(2.5rem, 6vw, 4rem)', 
+                  fontWeight: 500, 
+                  marginBottom: '1rem',
+                  color: 'hsl(20 40% 15%)'
+                }}
+              >
+                Teplo, ticho a vůně dřeva
+              </h2>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+              {/* Left column */}
+              <div style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(-2rem)',
+                transition: 'all 1s ease'
+              }}>
+                {/* Quote */}
+                <div style={{
+                  marginBottom: '2.5rem',
+                  padding: '1.5rem',
+                  borderRadius: '1rem',
+                  background: 'rgba(255,255,255,0.6)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid hsl(25 75% 50% / 0.1)'
+                }}>
+                  <p style={{ fontSize: '1.25rem', lineHeight: 1.7, fontWeight: 300, fontStyle: 'italic', color: 'hsl(20 35% 22%)' }}>
+                    <span className="font-display" style={{ fontSize: '2.5rem', color: 'hsl(25 75% 50%)', fontStyle: 'normal' }}>"</span>
+                    Ticho, teplo a klid. Místo, kde si můžete odpočinout od všeho a být sami sebou.
+                    <span className="font-display" style={{ fontSize: '2.5rem', color: 'hsl(25 75% 50%)', fontStyle: 'normal' }}>"</span>
+                  </p>
+                </div>
+                
+                {/* Features */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
+                  {features.map((item, index) => (
+                    <div
+                      key={index}
+                      className="hover-lift"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '1rem',
+                        padding: '1.25rem',
+                        borderRadius: '1rem',
+                        background: 'rgba(255,255,255,0.7)',
+                        backdropFilter: 'blur(8px)',
+                        border: '1px solid hsl(30 25% 82% / 0.3)',
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? 'translateY(0)' : 'translateY(1rem)',
+                        transition: `all 0.7s ease ${200 + index * 100}ms`
+                      }}
+                    >
+                      <div className="icon-hand-drawn" style={{ flexShrink: 0 }}>
+                        <item.Icon size={36} color="hsl(20 80% 38%)" />
+                      </div>
+                      <div>
+                        <h4 style={{ fontWeight: 600, fontSize: '1.125rem', marginBottom: '0.25rem', color: 'hsl(20 40% 15%)' }}>{item.title}</h4>
+                        <p style={{ fontSize: '0.875rem', fontWeight: 300, color: 'hsl(20 30% 35%)' }}>{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Temperature badge */}
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '1.25rem',
+                  padding: '1.25rem 1.75rem',
+                  background: 'linear-gradient(to right, hsl(25 75% 50% / 0.1), hsl(25 75% 50% / 0.05))',
+                  borderRadius: '1rem',
+                  border: '1px solid hsl(25 75% 50% / 0.2)'
+                }}>
+                  <div style={{ padding: '0.75rem', background: 'hsl(25 75% 50% / 0.15)', borderRadius: '0.75rem' }}>
+                    <Thermometer />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'hsl(20 80% 38%)' }}>90°C</h3>
+                    <p style={{ fontSize: '0.875rem', fontWeight: 300, color: 'hsl(20 30% 35%)' }}>Optimální teplota</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right column */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1.5rem',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateX(0)' : 'translateX(2rem)',
+                transition: 'all 1s ease 300ms'
+              }}>
+                {/* Featured image */}
+                <div style={{
+                  position: 'relative',
+                  borderRadius: '1rem',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--shadow-warm)'
+                }}>
+                  <img 
+                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
+                    alt="Naše finská sauna"
+                    style={{ width: '100%', height: '20rem', objectFit: 'cover' }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)'
+                  }} />
+                  <div style={{ position: 'absolute', bottom: '1rem', left: '1rem', right: '1rem' }}>
+                    <span style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.5rem 1rem',
+                      background: 'rgba(255,255,255,0.9)',
+                      backdropFilter: 'blur(8px)',
+                      borderRadius: '9999px',
+                      fontSize: '0.875rem',
+                      fontWeight: 500,
+                      color: 'hsl(18 45% 18%)'
+                    }}>
+                      <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                      Naše sauna
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Benefits card */}
+                <div className="luxury-card" style={{ padding: '2rem', position: 'relative', overflow: 'hidden' }}>
+                  {/* Corner decorations */}
+                  <div style={{ position: 'absolute', top: '0.75rem', left: '0.75rem', width: '1.5rem', height: '1.5rem', borderLeft: '2px solid hsl(25 75% 50% / 0.4)', borderTop: '2px solid hsl(25 75% 50% / 0.4)' }} />
+                  <div style={{ position: 'absolute', bottom: '0.75rem', right: '0.75rem', width: '1.5rem', height: '1.5rem', borderRight: '2px solid hsl(25 75% 50% / 0.4)', borderBottom: '2px solid hsl(25 75% 50% / 0.4)' }} />
+                  
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                    <div style={{ padding: '0.625rem', background: 'hsl(25 75% 50% / 0.1)', borderRadius: '0.75rem' }}>
+                      <CheckCircle2 />
+                    </div>
+                    <h3 className="font-display" style={{ fontSize: '1.5rem', fontWeight: 500, color: 'hsl(20 40% 15%)' }}>
+                      Proč finská sauna?
+                    </h3>
+                  </div>
+                  
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    {benefits.map((benefit, index) => (
+                      <li 
+                        key={index}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.75rem',
+                          padding: '0.75rem',
+                          borderRadius: '0.75rem',
+                          opacity: isVisible ? 1 : 0,
+                          transform: isVisible ? 'translateY(0)' : 'translateY(1rem)',
+                          transition: `all 0.5s ease ${400 + index * 100}ms`
+                        }}
+                      >
+                        <div style={{ padding: '0.375rem', background: 'hsl(142 60% 40% / 0.1)', borderRadius: '50%', marginTop: '0.125rem', flexShrink: 0 }}>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="hsl(142 60% 40%)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m9 12 2 2 4-4"/>
+                          </svg>
+                        </div>
+                        <span style={{ fontSize: '1rem', fontWeight: 300, color: 'hsl(20 35% 22%)' }}>{benefit.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    // ===== GALLERY SECTION =====
+    const Gallery = () => {
+      const { ref, isVisible } = useScrollAnimation();
+      
+      const images = [
+        { src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80", title: "Relaxační masáž" },
+        { src: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80", title: "Antistresová masáž" }
+      ];
+      
+      return (
+        <section 
+          id="gallery"
+          ref={ref}
+          className="bg-gradient-services"
+          style={{ padding: '8rem 1.5rem', position: 'relative', overflow: 'hidden' }}
+        >
+          <GlowingOrb color="light" size="lg" className="top-10 -left-40 opacity-40" />
+          <GlowingOrb color="warm" size="md" className="bottom-20 -right-20 opacity-30" />
+          
+          <div style={{ maxWidth: '72rem', margin: '0 auto', position: 'relative' }}>
+            {/* Header */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '4rem',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+              transition: 'all 1s ease'
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.625rem 1.25rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'hsl(25 75% 50% / 0.1)',
+                border: '1px solid hsl(25 75% 50% / 0.2)'
+              }}>
+                <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(20 80% 38%)' }}>Galerie</span>
+              </div>
+              <h2 className="font-display" style={{ fontSize: 'clamp(2.5rem, 6vw, 3.75rem)', fontWeight: 500, color: 'hsl(20 40% 15%)' }}>
+                Nahlédněte k nám
+              </h2>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className="hover-lift"
+                  style={{
+                    position: 'relative',
+                    borderRadius: '1.5rem',
+                    overflow: 'hidden',
+                    boxShadow: 'var(--shadow-warm)',
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                    transition: `all 1s ease ${200 + index * 200}ms`
+                  }}
+                >
+                  <img 
+                    src={image.src}
+                    alt={image.title}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', transition: 'transform 0.7s ease' }}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '1.5rem',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)'
+                  }}>
+                    <h3 style={{ color: 'white', fontSize: '1.25rem', fontWeight: 600 }}>{image.title}</h3>
+                  </div>
+                  {/* Corner decorations */}
+                  <div style={{ position: 'absolute', top: '1rem', left: '1rem', width: '2rem', height: '2rem', borderTop: '2px solid rgba(255,255,255,0.3)', borderLeft: '2px solid rgba(255,255,255,0.3)', borderRadius: '0.75rem 0 0 0' }} />
+                  <div style={{ position: 'absolute', bottom: '1rem', right: '1rem', width: '2rem', height: '2rem', borderBottom: '2px solid rgba(255,255,255,0.3)', borderRight: '2px solid rgba(255,255,255,0.3)', borderRadius: '0 0 0.75rem 0' }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    // ===== SERVICES SECTION =====
+    const Services = () => {
+      const { ref, isVisible } = useScrollAnimation();
+      
+      const services = [
+        { title: "Sportovní masáž", price: "400 - 800 Kč", description: "Specializovaná masáž pro sportovce zaměřená na regeneraci svalů.", features: ["Hluboké svalové techniky", "Individuální přístup", "30-60 minut"], Icon: SportIcon },
+        { title: "Relaxační masáž", price: "1200 Kč", description: "Jemná celotělová masáž pro úplné uvolnění a odstranění stresu.", features: ["Celotělová masáž", "Aromatické oleje", "90 minut"], Icon: RelaxIcon },
+        { title: "Baňkování", price: "450 - 500 Kč", description: "Tradiční čínská metoda pro zlepšení krevního oběhu.", features: ["Detoxikace organismu", "Zlepšení oběhu", "30-40 minut"], Icon: CuppingIcon },
+        { title: "Antistresová masáž", price: "450 Kč", description: "Speciální masáž hlavy a krční páteře pro uvolnění.", features: ["Uvolnění krčních svalů", "Proti migréně", "30-40 minut"], Icon: BrainIcon },
+        { title: "Lávové kameny", price: "950 Kč", description: "Masáž s horkými vulkanickými kameny pro hlubokou relaxaci.", features: ["Horké lávové kameny", "Hluboká relaxace", "60 minut"], Icon: HotStonesIcon },
+        { title: "Autotrakční lehátko", price: "100 - 200 Kč", description: "Moderní zařízení pro protažení páteře a uvolnění kloubů.", features: ["Trakce páteře", "Terapeutické protažení", "10-20 minut"], Icon: TractionIcon },
+        { title: "Kineziotejping", price: "Dle rozsahu", description: "Aplikace speciálních pásek pro podporu svalů a kloubů.", features: ["Podpora svalů", "Rehabilitace", "Individuální"], Icon: TapeIcon },
+        { title: "Vířivé vany", price: "250 / 500 Kč", description: "Relaxace ve vířivých vanách s hydromasážními tryskami.", features: ["Hydromasážní trysky", "Regulace teploty", "30/60 minut"], Icon: WhirlpoolIcon }
+      ];
+      
+      return (
+        <section
+          id="services"
+          ref={ref}
+          className="bg-gradient-services"
+          style={{ padding: '8rem 1.5rem', position: 'relative', overflow: 'hidden' }}
+        >
+          <GlowingOrb color="warm" size="lg" className="top-20 -right-40 opacity-20" />
+          <GlowingOrb color="light" size="md" className="bottom-40 -left-20 opacity-25" />
+          
+          <div style={{ maxWidth: '80rem', margin: '0 auto', position: 'relative' }}>
+            {/* Header */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '5rem',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+              transition: 'all 1s ease'
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.625rem 1.25rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'hsl(25 75% 50% / 0.1)',
+                border: '1px solid hsl(25 75% 50% / 0.2)'
+              }}>
+                <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(20 80% 38%)' }}>Služby</span>
+              </div>
+              <h2 className="font-display elegant-underline" style={{ display: 'inline-block', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, marginBottom: '1.5rem', color: 'hsl(20 40% 15%)' }}>
+                Naše služby
+              </h2>
+              <p style={{ fontSize: '1.25rem', maxWidth: '40rem', margin: '2.5rem auto 0', fontWeight: 300, color: 'hsl(20 30% 25%)' }}>
+                Finská sauna, vířivé vany a masážní služby
+              </p>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="service-card"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                    transition: `all 0.7s ease ${index * 80}ms`
+                  }}
+                >
+                  <div className="icon-hand-drawn" style={{ display: 'inline-flex', marginBottom: '1rem' }}>
+                    <service.Icon size={40} color="hsl(20 80% 38%)" />
+                  </div>
+                  <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem', color: 'hsl(20 40% 15%)' }}>{service.title}</h3>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: 'hsl(20 80% 38%)' }}>{service.price}</div>
+                  <p style={{ fontSize: '0.875rem', marginBottom: '1rem', lineHeight: 1.6, fontWeight: 300, color: 'hsl(20 30% 25%)' }}>{service.description}</p>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {service.features.map((feature, i) => (
+                      <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: 'hsl(20 25% 38%)' }}>
+                        <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'hsl(25 75% 50% / 0.6)' }} />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    // ===== PRICING SECTION =====
+    const Pricing = () => {
+      const { ref, isVisible } = useScrollAnimation();
+      
+      return (
+        <section
+          id="pricing"
+          ref={ref}
+          className="bg-gradient-pricing"
+          style={{ padding: '8rem 1.5rem', position: 'relative', overflow: 'hidden' }}
+        >
+          <GlowingOrb color="light" size="lg" className="-top-20 -right-20 opacity-30" />
+          <GlowingOrb color="warm" size="md" className="bottom-40 -left-32 opacity-20" />
+          
+          <div style={{ maxWidth: '72rem', margin: '0 auto', position: 'relative' }}>
+            {/* Header */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '5rem',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+              transition: 'all 1s ease'
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.625rem 1.25rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'hsl(25 75% 50% / 0.1)',
+                border: '1px solid hsl(25 75% 50% / 0.2)'
+              }}>
+                <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(20 80% 38%)' }}>Ceník</span>
+              </div>
+              <h2 className="font-display elegant-underline" style={{ display: 'inline-block', fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, color: 'hsl(20 45% 12%)' }}>
+                Ceník – Finská sauna
+              </h2>
+            </div>
+            
+            {/* Gift Voucher */}
+            <div 
+              className="gift-voucher"
+              style={{
+                borderRadius: '1.5rem',
+                padding: '2rem 2.5rem',
+                marginBottom: '3rem',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                transition: 'all 1s ease 100ms'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '2rem' }}>
+                <div style={{ flex: 1, minWidth: '280px' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
+                    <div className="icon-hand-drawn" style={{ flexShrink: 0 }}>
+                      <GiftIcon size={56} color="hsl(20 80% 38%)" />
+                    </div>
+                    <div>
+                      <h3 className="font-display" style={{ fontSize: '2rem', fontWeight: 500, marginBottom: '0.75rem', color: 'hsl(20 45% 12%)' }}>
+                        Dárkové poukazy
+                      </h3>
+                      <p style={{ fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 300, color: 'hsl(20 35% 20%)' }}>
+                        Darujte svým blízkým zážitek plný relaxace a pohody. Dárkové poukazy nabízíme v libovolné hodnotě.
+                      </p>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                        {['Na saunu', 'Na masáže', 'Kombinované'].map((tag, i) => (
+                          <span key={i} style={{
+                            padding: '0.5rem 1rem',
+                            borderRadius: '9999px',
+                            background: 'hsl(25 75% 50% / 0.15)',
+                            color: 'hsl(20 80% 38%)',
+                            fontSize: '0.875rem',
+                            fontWeight: 500
+                          }}>{tag}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ flexShrink: 0 }}>
+                  <button
+                    className="btn-cta"
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    <span>Objednat poukaz</span>
+                    <ArrowRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Pricing Cards */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+              {/* Single entry */}
+              <div
+                className="luxury-card hover-lift"
+                style={{
+                  padding: '2rem',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                  transition: 'all 1s ease 200ms'
+                }}
+              >
+                <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'hsl(20 45% 12%)' }}>
+                  Jednorázový vstup
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    { icon: User, label: "1 osoba / 2 hodiny", price: "250 Kč" },
+                    { icon: Baby, label: "Děti do 15 let", price: "150 Kč" },
+                    { icon: Clock, label: "Časově neomezený vstup", price: "350 Kč" }
+                  ].map((item, index) => (
+                    <div key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '1rem',
+                      borderRadius: '1rem',
+                      background: 'hsl(30 20% 88% / 0.3)'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <item.icon />
+                        <span style={{ fontWeight: 500, color: 'hsl(20 35% 20%)' }}>{item.label}</span>
+                      </div>
+                      <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'hsl(20 80% 38%)' }}>{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Passes */}
+              <div
+                className="luxury-card hover-lift"
+                style={{
+                  padding: '2rem',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                  transition: 'all 1s ease 300ms'
+                }}
+              >
+                <h3 className="font-display" style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'hsl(20 45% 12%)' }}>
+                  Permanentky
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    { label: "10 vstupů", price: "2300 Kč", savings: "Ušetříte 200 Kč" },
+                    { label: "20 vstupů", price: "4200 Kč", savings: "Ušetříte 800 Kč" }
+                  ].map((item, index) => (
+                    <div key={index} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '1rem',
+                      borderRadius: '1rem',
+                      background: 'hsl(25 75% 50% / 0.05)',
+                      border: '1px solid hsl(25 75% 50% / 0.1)'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <Ticket />
+                        <div>
+                          <span style={{ display: 'block', fontWeight: 500, color: 'hsl(20 35% 20%)' }}>{item.label}</span>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 500, color: 'hsl(142 60% 40%)' }}>{item.savings}</span>
+                        </div>
+                      </div>
+                      <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'hsl(20 80% 38%)' }}>{item.price}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '0.75rem',
+                  paddingTop: '1rem',
+                  marginTop: '1rem',
+                  borderTop: '1px solid hsl(30 25% 82% / 0.5)'
+                }}>
+                  <div style={{ padding: '0.5rem', background: 'hsl(142 60% 40% / 0.1)', borderRadius: '0.75rem' }}>
+                    <Heart />
+                  </div>
+                  <p style={{ fontSize: '0.875rem', fontWeight: 300, color: 'hsl(20 35% 20%)' }}>
+                    <span style={{ fontWeight: 600 }}>Tip:</span> Permanentky jsou přenosné – můžete je sdílet s rodinou nebo přáteli.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    // ===== CONTACT SECTION =====
+    const Contact = () => {
+      const { ref, isVisible } = useScrollAnimation();
+      
+      const schedule = [
+        { day: "Pondělí", time: "Zavřeno", type: "" },
+        { day: "Úterý", time: "16:00 - 21:00", type: "muži" },
+        { day: "Středa", time: "16:00 - 21:00", type: "ženy" },
+        { day: "Čtvrtek", time: "16:00 - 21:00", type: "společná" },
+        { day: "Pátek", time: "16:00 - 21:00", type: "společná" },
+        { day: "Sobota", time: "15:00 - 20:00", type: "společná" },
+        { day: "Neděle", time: "15:00 - 20:00", type: "společná" }
+      ];
+      
+      const contactInfo = [
+        { icon: MapPin, label: "Adresa", value: "Lipová alej 4110/23, Hodonín" },
+        { icon: Phone, label: "Telefon", value: "+420 737 443 674" },
+        { icon: Mail, label: "Email", value: "janasportmasaz@seznam.cz" }
+      ];
+      
+      return (
+        <section
+          id="contact"
+          ref={ref}
+          className="bg-gradient-contact"
+          style={{ padding: '8rem 1.5rem', position: 'relative', overflow: 'hidden' }}
+        >
+          <GlowingOrb color="light" size="lg" className="top-20 -right-40 opacity-15" />
+          <GlowingOrb color="warm" size="md" className="bottom-20 -left-20 opacity-10" />
+          
+          <div style={{ maxWidth: '72rem', margin: '0 auto', position: 'relative' }}>
+            {/* Header */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '5rem',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+              transition: 'all 1s ease'
+            }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.625rem 1.25rem',
+                marginBottom: '2rem',
+                borderRadius: '9999px',
+                background: 'hsl(25 75% 50% / 0.1)',
+                border: '1px solid hsl(25 75% 50% / 0.3)'
+              }}>
+                <span style={{ width: '0.5rem', height: '0.5rem', borderRadius: '50%', background: 'hsl(25 75% 50%)' }} />
+                <span style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'hsl(25 75% 50%)' }}>Kontakt</span>
+              </div>
+              <h2 className="font-display" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 500, marginBottom: '1rem', color: 'hsl(30 70% 68%)' }}>
+                Kontakt a rezervace
+              </h2>
+              <p style={{ fontSize: '1.25rem', fontWeight: 300, color: 'hsl(35 20% 92%)' }}>
+                Těšíme se na vaši návštěvu
+              </p>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+              {/* Opening hours */}
+              <div
+                className="luxury-card hover-lift"
+                style={{
+                  padding: '2rem',
+                  background: 'hsl(32 22% 93%)',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                  transition: 'all 1s ease'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div className="icon-hand-drawn">
+                    <Calendar />
+                  </div>
+                  <h3 className="font-display" style={{ fontSize: '1.25rem', color: 'hsl(20 42% 18%)' }}>
+                    Otevírací doba – prosinec 2025
+                  </h3>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  {schedule.map((item, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        display: 'grid',
+                        gridTemplateColumns: '100px 1fr 80px',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        padding: '0.75rem',
+                        borderRadius: '0.75rem',
+                        background: item.time === "Zavřeno" ? 'hsl(0 60% 50% / 0.05)' : 'hsl(30 20% 88% / 0.3)'
+                      }}
+                    >
+                      <span style={{ fontWeight: 500, color: 'hsl(20 22% 42%)' }}>{item.day}</span>
+                      <span style={{ fontWeight: 600, textAlign: 'center', color: item.time === "Zavřeno" ? 'hsl(0 50% 50% / 0.8)' : 'hsl(20 80% 38%)' }}>
+                        {item.time}
+                      </span>
+                      <span style={{
+                        fontSize: '0.75rem',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '9999px',
+                        textAlign: 'center',
+                        background: item.type ? 'hsl(25 75% 50% / 0.1)' : 'transparent',
+                        color: item.type ? 'hsl(20 80% 38%)' : 'transparent',
+                        fontWeight: 500
+                      }}>
+                        {item.type}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Contact info */}
+              <div
+                className="luxury-card hover-lift"
+                style={{
+                  padding: '2rem',
+                  background: 'hsl(32 22% 93%)',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                  transition: 'all 1s ease 150ms'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div className="icon-hand-drawn">
+                    <MapPin />
+                  </div>
+                  <h3 className="font-display" style={{ fontSize: '1.25rem', color: 'hsl(20 42% 18%)' }}>
+                    Kde nás najdete
+                  </h3>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {contactInfo.map((item, index) => (
+                    <div
+                      key={index}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '1rem',
+                        padding: '1rem',
+                        borderRadius: '0.75rem',
+                        background: 'hsl(30 20% 88% / 0.3)'
+                      }}
+                    >
+                      <div style={{ padding: '0.75rem', background: 'hsl(25 75% 50% / 0.1)', borderRadius: '0.75rem' }}>
+                        <item.icon />
+                      </div>
+                      <div>
+                        <p style={{ fontSize: '0.875rem', marginBottom: '0.25rem', fontWeight: 300, color: 'hsl(20 22% 42%)' }}>{item.label}</p>
+                        <p style={{ fontWeight: 600, fontSize: '1.125rem', color: 'hsl(20 80% 38%)' }}>{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Map */}
+            <div
+              className="luxury-card"
+              style={{
+                marginTop: '2rem',
+                overflow: 'hidden',
+                background: 'hsl(32 22% 93%)',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(2rem)',
+                transition: 'all 1s ease 300ms'
+              }}
+            >
+              <div style={{ padding: '1.5rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div className="icon-hand-drawn">
+                    <MapPin />
+                  </div>
+                  <h3 className="font-display" style={{ fontSize: '1.25rem', color: 'hsl(20 42% 18%)' }}>Mapa</h3>
+                </div>
+              </div>
+              <div style={{ width: '100%', height: '400px' }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2642.8234567890123!2d17.1234567890123!3d48.8523456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0a123456789a%3A0x123456789abcdef0!2sLipov%C3%A1%20alej%204110%2F23%2C%20695%2001%20Hodon%C3%ADn!5e0!3m2!1scs!2scz!4v1234567890123!5m2!1scs!2scz"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapa - Sauna Na Teze"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    };
+    
+    // ===== FOOTER =====
+    const Footer = () => {
+      const currentYear = new Date().getFullYear();
+      
+      return (
+        <footer style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'hsl(18 45% 10%)' }}>
+          <div style={{ height: '4px', background: 'linear-gradient(to right, transparent, hsl(25 75% 50% / 0.5), transparent)' }} />
+          
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '4rem 1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
+                <span className="font-display" style={{ fontSize: '1.875rem', fontWeight: 500, color: 'white' }}>
+                  Sauna Na Teze
+                </span>
+              </div>
+              
+              <p style={{ color: 'rgba(255,255,255,0.6)', textAlign: 'center', marginBottom: '2.5rem', maxWidth: '28rem', fontWeight: 300 }}>
+                Finská sauna v srdci Hodonína. Relaxace, regenerace a pohoda pro tělo i duši.
+              </p>
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61582524922922"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.75rem 1.5rem',
+                    background: 'rgba(24, 119, 242, 0.1)',
+                    color: 'white',
+                    borderRadius: '9999px',
+                    textDecoration: 'none',
+                    border: '1px solid rgba(24, 119, 242, 0.3)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <Facebook />
+                  <span style={{ fontWeight: 500 }}>Facebook</span>
+                </a>
+              </div>
+              
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%', maxWidth: '20rem', marginBottom: '2rem' }}>
+                <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to right, transparent, hsl(25 75% 50% / 0.3))' }} />
+                <div style={{ width: '8px', height: '8px', transform: 'rotate(45deg)', border: '1px solid hsl(25 75% 50% / 0.4)' }} />
+                <div style={{ flex: 1, height: '1px', background: 'linear-gradient(to left, transparent, hsl(25 75% 50% / 0.3))' }} />
+              </div>
+              
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                © {currentYear} Sauna Na Teze. Vytvořeno s
+                <span style={{ color: '#f87171' }} className="animate-pulse">
+                  <Heart />
+                </span>
+                v Hodoníně.
+              </p>
+            </div>
+          </div>
+          
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '24rem',
+            height: '8rem',
+            background: 'hsl(25 75% 50% / 0.1)',
+            filter: 'blur(48px)',
+            pointerEvents: 'none'
+          }} />
+        </footer>
+      );
+    };
+    
+    // ===== MAIN APP =====
+    const App = () => {
+      return (
+        <div style={{ minHeight: '100vh' }}>
+          <Navigation />
+          <Hero />
+          <About />
+          <Gallery />
+          <Services />
+          <Pricing />
+          <Contact />
+          <Footer />
+        </div>
+      );
+    };
+    
+    // Render
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
