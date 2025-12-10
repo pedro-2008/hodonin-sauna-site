@@ -66,17 +66,7 @@ export const Pricing = () => {
               
               {/* Right side - CTA */}
               <div className="flex-shrink-0">
-                <Button className="btn-cta gap-2 group" onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({
-                    behavior: 'smooth'
-                  });
-                }
-              }}>
-                  <span>Objednat poukaz</span>
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+                
               </div>
             </div>
             
