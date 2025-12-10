@@ -6,43 +6,36 @@ interface HandDrawnIconProps {
   color?: string;
 }
 
-// Sauna/Steam icon - hand drawn style
+// Sauna/Heat flame icon - hand drawn style (healing warmth)
 export const SaunaIcon = ({ className, size = 48, color = "currentColor" }: HandDrawnIconProps) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={cn("", className)}>
+    {/* Main flame */}
     <path 
-      d="M16 48 C16 36 22 32 32 32 C42 32 48 36 48 48" 
+      d="M32 8 C38 18 46 24 46 36 C46 46 40 54 32 54 C24 54 18 46 18 36 C18 24 26 18 32 8" 
       stroke={color} 
       strokeWidth="2.5" 
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
+    {/* Inner flame */}
     <path 
-      d="M12 52 L52 52" 
-      stroke={color} 
-      strokeWidth="2.5" 
-      strokeLinecap="round"
-    />
-    <path 
-      d="M20 28 Q22 20 20 14" 
+      d="M32 22 C36 28 40 32 40 40 C40 46 36 50 32 50 C28 50 24 46 24 40 C24 32 28 28 32 22" 
       stroke={color} 
       strokeWidth="2" 
       strokeLinecap="round"
-      opacity="0.8"
+      strokeLinejoin="round"
+      fill="none"
+      opacity="0.7"
     />
+    {/* Core warmth */}
     <path 
-      d="M32 26 Q34 16 32 10" 
+      d="M32 34 C34 38 36 40 36 44 C36 47 34 49 32 49 C30 49 28 47 28 44 C28 40 30 38 32 34" 
       stroke={color} 
-      strokeWidth="2" 
+      strokeWidth="1.5" 
       strokeLinecap="round"
-      opacity="0.8"
-    />
-    <path 
-      d="M44 28 Q46 20 44 14" 
-      stroke={color} 
-      strokeWidth="2" 
-      strokeLinecap="round"
-      opacity="0.8"
+      fill="none"
+      opacity="0.5"
     />
   </svg>
 );
