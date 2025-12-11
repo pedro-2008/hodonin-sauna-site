@@ -32,10 +32,8 @@ export const Footer = () => {
             <div className="flex-1 h-[1px] bg-gradient-to-l from-transparent to-amber/30" />
           </div>
           
-          <p className="text-white/50 text-sm flex items-center gap-2 justify-center">
-            © {currentYear} Sauna Na Teze. Vytvořeno s 
-            <Heart className="w-4 h-4 text-red-400 animate-pulse" fill="currentColor" />
-            v Hodoníně.
+          <p className="text-white/50 text-sm">
+            © 2025 Sauna Na Teze. Všechna práva vyhrazena.
           </p>
         </div>
       </div>
