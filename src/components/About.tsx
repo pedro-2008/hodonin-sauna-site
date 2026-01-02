@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Thermometer, CheckCircle2 } from "lucide-react";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
 import { SaunaIcon, HotStonesIcon } from "@/components/decorative/HandDrawnIcons";
-import { TreePine } from "lucide-react";
+import { Leaf } from "lucide-react";
 import naseSaunaImage from "@/assets/nase-sauna.jpg";
 
 export const About = () => {
@@ -19,7 +19,7 @@ export const About = () => {
   const features = [
     { Icon: SaunaIcon, title: "Teplo, které léčí", desc: "Finská sauna s teplotou až 90°C" },
     { Icon: HotStonesIcon, title: "Očista těla i mysli", desc: "Tradiční saunování pro dokonalou regeneraci" },
-    { Icon: TreePine, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
+    { Icon: Leaf, title: "Přírodní materiály", desc: "Kvalitní dřevo a přírodní esence" },
   ];
 
   return (
