@@ -180,3 +180,20 @@ export const SportIcon = ({ className, size = 48, color = "currentColor" }: Hand
     <path d="M52 28 L56 28 M52 36 L56 36" stroke={color} strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
+
+// Wood/Log icon - hand drawn style
+export const WoodIcon = ({ className, size = 48, color = "currentColor" }: HandDrawnIconProps) => (
+  <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={cn("", className)}>
+    {/* Main log */}
+    <ellipse cx="18" cy="32" rx="8" ry="14" stroke={color} strokeWidth="2.5" fill="none" />
+    {/* Log body */}
+    <path d="M18 18 L48 18 C52 18 54 24 54 32 C54 40 52 46 48 46 L18 46" stroke={color} strokeWidth="2.5" fill="none" />
+    {/* Wood rings */}
+    <ellipse cx="18" cy="32" rx="4" ry="8" stroke={color} strokeWidth="1.5" fill="none" opacity="0.6" />
+    <circle cx="18" cy="32" r="2" stroke={color} strokeWidth="1.5" fill="none" opacity="0.4" />
+    {/* Wood grain lines */}
+    <path d="M26 22 Q32 24 38 22" stroke={color} strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    <path d="M28 32 Q36 34 44 32" stroke={color} strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    <path d="M26 42 Q32 40 38 42" stroke={color} strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+  </svg>
+);
