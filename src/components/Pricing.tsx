@@ -56,9 +56,7 @@ export const Pricing = () => {
                       <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
                         Na masáže
                       </span>
-                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                        Kombinované
-                      </span>
+                      
                     </div>
                   </div>
                 </div>
