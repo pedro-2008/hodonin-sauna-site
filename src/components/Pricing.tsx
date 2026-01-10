@@ -50,12 +50,8 @@ export const Pricing = () => {
                     color: 'hsl(var(--pricing-main-text))'
                   }}>Darujte svým blízkým zážitek plný relaxace a pohody. Dárkové poukazy nabízíme v libovolné hodnotě.</p>
                     <div className="flex flex-wrap gap-3">
-                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                        Na saunu
-                      </span>
-                      <span className="px-4 py-2 rounded-full bg-luxury-gold/15 text-luxury-gold-dark text-sm font-medium">
-                        Na masáže
-                      </span>
+                      
+                      
                       
                     </div>
                   </div>
