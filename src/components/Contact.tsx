@@ -48,6 +48,10 @@ export const Contact = () => {
     icon: Mail,
     label: "Email",
     value: "janasportmasaz@seznam.cz"
+  }, {
+    icon: Calendar,
+    label: "IČO",
+    value: "72517107"
   }];
   return <section id="contact" ref={ref} className="py-32 px-6 relative overflow-hidden bg-gradient-contact">
       {/* Decorative Elements */}
