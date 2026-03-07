@@ -68,7 +68,7 @@ export const Contact = () => {
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-8 rounded-full bg-luxury-gold/10 border border-luxury-gold/30">
             <span className="w-2 h-2 rounded-full bg-luxury-gold" />
-            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold">Kontakt</span>
+            <span className="text-sm font-medium tracking-wider uppercase text-luxury-gold">Kontakty</span>
           </div>
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-4" style={{
           color: 'hsl(var(--contact-heading))'
