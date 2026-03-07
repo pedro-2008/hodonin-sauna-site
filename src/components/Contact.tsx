@@ -123,7 +123,7 @@ export const Contact = () => {
                 <CardTitle className="font-display text-xl" style={{
                 color: 'hsl(var(--contact-card-heading))'
               }}>
-                  Kde nás najdete
+                  Kontakty
                 </CardTitle>
               </div>
             </CardHeader>
