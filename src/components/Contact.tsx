@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar, Hash } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
@@ -49,7 +49,7 @@ export const Contact = () => {
     label: "Email",
     value: "janasportmasaz@seznam.cz"
   }, {
-    icon: Calendar,
+    icon: Hash,
     label: "IČO",
     value: "72517107"
   }];
