@@ -49,7 +49,7 @@ export const Contact = () => {
     label: "Email",
     value: "janasportmasaz@seznam.cz"
   }, {
-    icon: Calendar,
+    icon: Hash,
     label: "IČO",
     value: "72517107"
   }];
