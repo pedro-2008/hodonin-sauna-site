@@ -65,7 +65,7 @@ export const Pricing = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute top-4 right-4 w-24 h-24 border border-luxury-gold/10 rounded-full" />
+            
             
           </div>
         </div>
