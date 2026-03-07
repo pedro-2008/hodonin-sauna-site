@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Calendar, Hash } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { GlowingOrb } from "@/components/decorative/GlowingOrb";
@@ -48,10 +48,6 @@ export const Contact = () => {
     icon: Mail,
     label: "Email",
     value: "janasportmasaz@seznam.cz"
-  }, {
-    icon: Hash,
-    label: "IČO",
-    value: "72517107"
   }];
   return <section id="contact" ref={ref} className="py-32 px-6 relative overflow-hidden bg-gradient-contact">
       {/* Decorative Elements */}
