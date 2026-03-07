@@ -43,7 +43,7 @@ export const Navigation = () => {
                 {item.label}
               </button>)}
             <button onClick={() => scrollToSection("contact")} className={`ml-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${isScrolled ? "bg-gradient-cta text-accent-foreground shadow-gold hover:shadow-lg" : "bg-luxury-gold/90 text-accent-foreground hover:bg-luxury-gold"}`}>
-              Kontakt
+              Kontakty
             </button>
           </div>
 
