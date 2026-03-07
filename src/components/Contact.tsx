@@ -73,7 +73,7 @@ export const Contact = () => {
           <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-4" style={{
           color: 'hsl(var(--contact-heading))'
         }}>
-            Kontakt a rezervace
+            Kontakty a otevírací doba
           </h2>
           <p className="text-xl font-light" style={{
           color: 'hsl(var(--contact-main-text))'
