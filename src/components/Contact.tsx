@@ -118,7 +118,7 @@ export const Contact = () => {
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
                 <div className="icon-hand-drawn">
-                  <MapPin className="w-8 h-8 text-luxury-gold-dark" />
+                  <Phone className="w-8 h-8 text-luxury-gold-dark" />
                 </div>
                 <CardTitle className="font-display text-xl" style={{
                 color: 'hsl(var(--contact-card-heading))'
