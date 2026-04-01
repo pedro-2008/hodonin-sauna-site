@@ -13,11 +13,6 @@ const Index = () => {
     <div className="min-h-screen">
       <HolidayNotice />
       <Navigation />
-
-const Index = () => {
-  return (
-    <div className="min-h-screen">
-      <Navigation />
       <Hero />
       <About />
       <Gallery />
