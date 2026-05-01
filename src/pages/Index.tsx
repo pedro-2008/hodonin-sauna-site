@@ -7,10 +7,12 @@ import { Services } from "@/components/Services";
 import { Pricing } from "@/components/Pricing";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { HolidayNotice } from "@/components/HolidayNotice";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <HolidayNotice />
       <Navigation />
       <Hero />
       <About />
