@@ -29,12 +29,12 @@ export const Contact = () => {
     type: "společná"
   }, {
     day: "Sobota",
-    time: "15:00 - 20:00",
-    type: "společná"
+    time: "Zavřeno",
+    type: ""
   }, {
     day: "Neděle",
-    time: "15:00 - 20:00",
-    type: "společná"
+    time: "Zavřeno",
+    type: ""
   }];
   const contactInfo = [{
     icon: MapPin,
