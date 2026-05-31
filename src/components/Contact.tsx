@@ -25,8 +25,8 @@ export const Contact = () => {
     type: "společná"
   }, {
     day: "Pátek",
-    time: "16:00 - 21:00",
-    type: "společná"
+    time: "Zavřeno",
+    type: ""
   }, {
     day: "Sobota",
     time: "Zavřeno",
