@@ -90,7 +90,7 @@ export const Contact = () => {
                 </div>
                 <CardTitle className="font-display text-xl" style={{
                 color: 'hsl(var(--contact-card-heading))'
-              }}>Otevírací doba - červen 2026</CardTitle>
+              }}>Otevírací doba - srpen 2026</CardTitle>
               </div>
             </CardHeader>
             <CardContent>
