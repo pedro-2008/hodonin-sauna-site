@@ -13,8 +13,8 @@ export const Contact = () => {
     type: ""
   }, {
     day: "Úterý",
-    time: "16:00 - 21:00",
-    type: "muži"
+    time: "Zavřeno",
+    type: ""
   }, {
     day: "Středa",
     time: "16:00 - 21:00",
