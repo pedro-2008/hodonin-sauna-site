@@ -22,7 +22,7 @@ export const Services = () => {
     Icon: RelaxIcon
   }, {
     title: "Baňkování",
-    price: "450 - 500 Kč",
+    price: "500 - 550 Kč",
     description: "Tradiční čínská metoda pro zlepšení krevního oběhu.",
     features: ["Detoxikace organismu", "Zlepšení oběhu", "30-40 minut"],
     Icon: CuppingIcon
