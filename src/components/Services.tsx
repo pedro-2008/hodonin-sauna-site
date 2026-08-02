@@ -30,7 +30,7 @@ export const Services = () => {
     title: "Antistresová masáž",
     price: "450 Kč",
     description: "Speciální masáž hlavy a krční páteře pro uvolnění.",
-    features: ["Uvolnění krčních svalů", "Proti migréně", "30-40 minut"],
+    features: ["Uvolnění krčních svalů", "Proti migréně", "30 minut"],
     Icon: BrainIcon
   }, {
     title: "Lávové kameny",
