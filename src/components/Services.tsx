@@ -10,7 +10,7 @@ export const Services = () => {
   } = useScrollAnimation();
   const services = [{
     title: "Sportovní masáž",
-    price: "400 - 800 Kč",
+    price: "450 - 900 Kč",
     description: "Specializovaná masáž pro sportovce zaměřená na regeneraci svalů.",
     features: ["Hluboké svalové techniky", "Individuální přístup", "30-60 minut"],
     Icon: SportIcon
