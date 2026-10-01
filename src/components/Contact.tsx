@@ -13,8 +13,8 @@ export const Contact = () => {
     type: ""
   }, {
     day: "Úterý",
-    time: "Zavřeno",
-    type: ""
+    time: "16:00 - 21:00",
+    type: "muži"
   }, {
     day: "Středa",
     time: "16:00 - 21:00",
@@ -25,16 +25,16 @@ export const Contact = () => {
     type: "společná"
   }, {
     day: "Pátek",
-    time: "Zavřeno",
-    type: ""
+    time: "16:00 - 21:00",
+    type: "společná"
   }, {
     day: "Sobota",
-    time: "Zavřeno",
-    type: ""
+    time: "15:00 - 20:00",
+    type: "společná"
   }, {
     day: "Neděle",
-    time: "Zavřeno",
-    type: ""
+    time: "15:00 - 20:00",
+    type: "společná"
   }];
   const contactInfo = [{
     icon: MapPin,
