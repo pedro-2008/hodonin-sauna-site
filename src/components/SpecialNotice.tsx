@@ -83,8 +83,8 @@ export const SpecialNotice = () => {
         <div className="space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
           <p className="font-medium text-foreground">Vážení návštěvníci,</p>
           <p>
-            rádi bychom vás informovali, že sauna bude zítra, ve středu 28.
-            října, z důvodu státního svátku uzavřena.
+            rádi bychom vás informovali, že sauna bude ve středu 28. října z
+            důvodu státního svátku uzavřena.
           </p>
           <p>
             Přejeme vám krásný a pohodový den plný odpočinku a těšíme se na vás
