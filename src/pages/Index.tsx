@@ -7,6 +7,7 @@ import { Services } from "@/components/Services";
 import { Pricing } from "@/components/Pricing";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { SpecialNotice } from "@/components/SpecialNotice";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Pricing />
       <Contact />
       <Footer />
+      <SpecialNotice />
     </div>
   );
 };
