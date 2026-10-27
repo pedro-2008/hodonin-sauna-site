@@ -62,7 +62,7 @@ export const SpecialNotice = () => {
       />
 
       {/* Card */}
-      <div className="relative w-full max-w-lg rounded-lg border border-accent/30 bg-card p-8 sm:p-10 shadow-lift animate-in fade-in-0 zoom-in-95 duration-300">
+      <div className="relative w-full max-w-lg rounded-lg border border-accent/30 bg-card p-8 sm:p-10 shadow-warm animate-in fade-in-0 zoom-in-95 duration-300">
         <button
           type="button"
           onClick={close}
@@ -72,16 +72,13 @@ export const SpecialNotice = () => {
           <X className="h-4 w-4" />
         </button>
 
-        <p className="mb-4 text-xs uppercase tracking-[0.25em] text-accent">
+        <p
+          id="special-notice-title"
+          className="mb-6 text-xs uppercase tracking-[0.25em] text-accent"
+        >
           Oznámení
         </p>
 
-        <h2
-          id="special-notice-title"
-          className="mb-6 font-display text-2xl sm:text-3xl text-primary"
-        >
-          Sauna zavřena
-        </h2>
 
         <div className="space-y-4 text-base sm:text-lg leading-relaxed text-muted-foreground">
           <p className="font-medium text-foreground">Vážení návštěvníci,</p>
